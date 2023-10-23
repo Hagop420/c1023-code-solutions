@@ -1,0 +1,15 @@
+const fullName = 'Cody Miller';
+const isCool = true;
+const totalPets = 1;
+let undefinedVar;
+const undVar2 = undefined;
+console.log(`value of fullName: ${fullName}`);
+console.log(`value of isCool: ${isCool}`);
+console.log(`value of totalPets: ${totalPets}`);
+console.log(`typeof fullName: ${typeof fullName}`);
+console.log(`value of isCool: ${typeof isCool}`);
+console.log(`typeof totalPets: ${typeof totalPets}`);
+console.log(`value of unknown: ${null}`);
+console.log(`typeof unknown: ${typeof null}`);
+console.log(`value of never: ${typeof undefinedVar}`);
+console.log(`typeof never: ${typeof undVar2}`);
