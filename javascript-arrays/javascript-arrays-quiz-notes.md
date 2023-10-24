@@ -7,8 +7,8 @@ After completing this exercise, you should be able to discuss or answer the foll
 - What are arrays used for?
   -Storing any type of data Other programming languages might differ using a single variable
 - Describe array literal notation.
-  -const array1=[1,2,3,4,5]
-
+-const array1=[1,2,3,4,5]
+<!--  -->
 - How are arrays different from "plain" objects?
   -Arrays use brackets where as objects use {}
 - What number represents the first index of an array?
