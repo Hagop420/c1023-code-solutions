@@ -28,7 +28,7 @@ const vehicle = {
   model: '440i',
   year: 2017,
 };
-
+//
 vehicle.color = 'black';
 
 vehicle.isConvertible = false;
