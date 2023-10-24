@@ -22,16 +22,16 @@ console.log(
 );
 
 // vehicle object creation
-
+//
 const vehicle = {
   make: 'Bmw',
   model: '440i',
   year: 2017,
 };
 //
-vehicle.color = 'black';
+vehicle['color'] = 'black';
 
-vehicle.isConvertible = false;
+vehicle['isConvertible'] = false;
 
 console.log(`Value of vehicle.["color"]: ${vehicle.color}`);
 console.log(`Value of vehicle["isConvertible"]: ${vehicle.isConvertible}`);
