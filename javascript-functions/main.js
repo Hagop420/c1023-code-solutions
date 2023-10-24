@@ -2,9 +2,9 @@ const convertMinutesToSeconds = (minutes) => Math.pow(10, 3) * 6;
 
 console.log(convertMinutesToSeconds(3));
 
-const greet = (name) => 'Jack';
+const greet = (name) => name;
 
-console.log(`Hey ${greet()}`);
+console.log(`Hey ${greet('Jack')}`);
 
 const getArea = (width, height) => {
   return 0.5 * width * height;
