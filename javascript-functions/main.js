@@ -13,11 +13,9 @@ const getArea = (width, height) => {
 console.log(getArea(3, 5));
 
 // getFirstName function
-const getFirstName = (him = hi) => him.name;
-const hi = {
-  name: 'weed',
-};
+const getFirstName = (person) => person.firstName;
 
+console.log(getFirstName({ firstName: 'Jack', lastName: 'Almadjian' }));
 console.log(getFirstName());
 
 const getLastElement = (
