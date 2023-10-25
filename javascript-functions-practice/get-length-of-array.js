@@ -1,3 +1,3 @@
 /* exported getLengthOfArray */
-const getLengthOfArray = (array = ['foo', 'bar', 'baz']) => array.length;
-console.log(getLengthOfArray());
+const getLengthOfArray = (array) => array.length;
+console.log(getLengthOfArray(['foo', 'bar', 'baz']));

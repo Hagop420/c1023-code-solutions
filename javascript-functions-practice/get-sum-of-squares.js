@@ -6,9 +6,3 @@ const getSumOfSquares = (x, y) => {
 console.log(getSumOfSquares(4, 5));
 console.log(getSumOfSquares(5, 5));
 console.log(getSumOfSquares(3, 8));
-
-const getAreaOfCircle = (radius) => {
-  return Math.PI * radius * radius;
-};
-
-console.log(getAreaOfCircle(4.982787485166879));
