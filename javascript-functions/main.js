@@ -13,15 +13,21 @@ const getArea = (width, height) => {
 console.log(getArea(3, 5));
 
 // getFirstName function
+const person = {
+  firstName: 'Jack',
+  lastName: 'Almadjian',
+};
+
 const getFirstName = (person) => person.firstName;
 
 console.log(getFirstName({ firstName: 'Jack', lastName: 'Almadjian' }));
-console.log(getFirstName());
 
-const getLastElement = (
-  array = ['propane', 'and', 'propane', 'accessories']
-) => {
+// console.log(getFirstName(person));
+
+console.log('My name is:', person);
+
+const getLastElement = (array) => {
   return array[array.length - 1];
 };
 
-console.log(getLastElement());
+console.log(getLastElement(['propane', 'and', 'propane', 'accessories']));
