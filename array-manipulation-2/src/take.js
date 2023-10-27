@@ -1,0 +1,12 @@
+/* exported take */
+function take(array, count) {
+  const newArr = [];
+  if (array.length === 0) {
+    return [];
+  }
+
+  for (let i = 0; i < count; i += 1) {
+    newArr.push(array[i]);
+  }
+  return newArr;
+}
