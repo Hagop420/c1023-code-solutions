@@ -24,7 +24,7 @@ function getEvenNumbersToTwenty() {
 
   while (currentNumber <= 20) {
     evenNumbers.push(currentNumber);
-    currentNumber += 1;
+    currentNumber += 2;
   }
 
   return evenNumbers;
@@ -62,8 +62,8 @@ console.log('weokooio');
 function doubleAll(numbers) {
   const doubled = [];
   for (let i = 0; i < numbers.length; i += 1) {
-    const doubledTwo = numbers.map((arr) => arr * 2);
-    doubled.push('doubleAll:', doubledTwo);
+    doubled.push(numbers[i] * 2);
+    // doubled.push(numbers[i]);
   }
   return doubled;
 }
