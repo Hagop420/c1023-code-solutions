@@ -37,7 +37,7 @@ function findWinningPlayer(players) {
   return winningPlayers;
 }
 
-function runCardGame(players, numCardsPerHand) {
+function runCardGame(players, numPerHand) {
   const ranks = [
     'Ace',
     '2',
@@ -74,7 +74,7 @@ function runCardGame(players, numCardsPerHand) {
   }
 
   shuffleDeck(deck);
-  dealCards(players, deck, numCardsPerHand);
+  dealCards(players, deck, numPerHand);
 
   console.log('Players and their hands:');
   for (const player of players) {
@@ -97,7 +97,7 @@ function runCardGame(players, numCardsPerHand) {
       );
     }
     console.log('Running a tie-breaker...');
-    runCardGame(winningPlayers, numCardsPerHand);
+    runCardGame(winningPlayers, numPerHand);
   }
 }
 
@@ -108,6 +108,6 @@ const players = [
   { name: 'Player 4', hand: [] },
 ];
 
-const numCardsPerHand = 2;
+const numPerHand = 2;
 
-runCardGame(players, numCardsPerHand);
+runCardGame(players, numPerHand);
