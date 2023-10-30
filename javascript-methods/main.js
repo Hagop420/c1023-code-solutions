@@ -3,23 +3,26 @@ const y = 8;
 const z = 7;
 
 const maximumValue = Math.max(x, y, z);
-console.log(maximumValue);
-const heroes = [1, 2, 3, 4];
+console.log(`maximumvalue: ${maximumValue}`);
+const heroes = ['jack', 'brett', 'IDK'];
 
+// assign a random number
 let randomNumber = Math.random();
-
+// append the length of the heroes array to randomNumber
 randomNumber *= heroes.length;
-
+console.log(randomNumber);
+// gets the index placements of the heroes array randomized
 const randomIndex = Math.floor(randomNumber);
-
 console.log(randomIndex);
 
-const randomHero = randomIndex[heroes];
+console.log(`randomIndex: ${randomIndex}`);
 
-console.log(randomHero);
+const randomHero = heroes[randomIndex];
+
+console.log(`randomHero: ${randomHero} is a hero`);
 
 // Array Methods
-
+// array
 // book objects
 
 const js = {
@@ -48,9 +51,9 @@ const library = [
 
 const lastBook = library.pop();
 
-console.log(lastBook);
+console.log('lastBook:', lastBook);
 
-console.log(library[0]);
+console.log('firstBook:', library[0]);
 
 // push method
 
@@ -68,7 +71,7 @@ const fullName = 'Jack Almadjian';
 
 const firstAndLastName = fullName.split(' ');
 
-console.log(firstAndLastName);
+console.log('firstAndLastName:', firstAndLastName);
 
 const firstName = firstAndLastName[0];
 
