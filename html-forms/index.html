@@ -28,10 +28,10 @@
     <form id="centered" action="">
       <label for="email">Email</label>
       <input type="email" id="email" />
-      <label for="email">Why is coding cool</label>
+      <label for="sel">Why is coding cool</label>
 
       <!-- select input -->
-      <select name="code">
+      <select name="code" id="sel">
         <option value="volvo">item1</option>
         <option value="saab">item2</option>
         <option value="mercedes">item3</option>
@@ -62,7 +62,16 @@
         <input type="checkbox" name="chk" id="ok" />
       </label>
 
-      <textarea name="textarea" cols="10" rows="10">Comments</textarea>
+      <label
+        style="
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          margin-top: 10px;
+        ">
+        Comments
+        <textarea name="textarea" cols="10" rows="10"></textarea>
+      </label>
 
       <button style="width: 100px" type="submit">Submit</button>
     </form>
