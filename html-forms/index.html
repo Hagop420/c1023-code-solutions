@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      #centered {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      input[type='email'],
+      select {
+        width: 100px;
+      }
+
+      textarea {
+        width: 20vh !important;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center; text-transform: capitalize">coding forms</h1>
+
+    <form id="centered" action="">
+      <label for="email">Email</label>
+      <input type="email" id="email" />
+      <label for="sel">Why is coding cool</label>
+
+      <!-- select input -->
+      <select name="code" id="sel">
+        <option value="volvo">item1</option>
+        <option value="saab">item2</option>
+        <option value="mercedes">item3</option>
+        <option value="audi">item4</option>
+      </select>
+
+      <!-- radios -->
+
+      <label for="rads">favorite lingos(choose one)</label>
+
+      <div id="radsFlex">
+        <label for="HTML">
+          <input type="radio" value="HTML" name="radio" id="HTML" />
+          HTML
+        </label>
+
+        <label> <input type="radio" value="CSS" name="radio" />CSS </label>
+
+        <label> <input type="radio" value="JS" name="radio" />JS </label>
+      </div>
+
+      <!-- text -->
+
+      <p>would you like to sign up for more alerts</p>
+
+      <label for="ok">
+        Sign me up
+        <input type="checkbox" name="chk" id="ok" />
+      </label>
+
+      <label
+        style="
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          margin-top: 10px;
+        ">
+        Comments
+        <textarea name="textarea" cols="10" rows="10"></textarea>
+      </label>
+
+      <button style="width: 100px" type="submit">Submit</button>
+    </form>
+  </body>
+</html>
