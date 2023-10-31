@@ -12,6 +12,7 @@ article {
   padding-right: 16px;
   border: 1px solid black;
   margin-bottom: 16px;
+  border-radius: 6px;
 }
 
 .title {
