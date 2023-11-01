@@ -8,6 +8,7 @@ function pick(source, keys) {
       obj[key] = source[key];
     }
   }
+  // key return
 
   return obj;
 }
