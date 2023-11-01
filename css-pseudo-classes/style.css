@@ -1,0 +1,32 @@
+th:first-child,
+th:nth-child(2),
+th:nth-child(3) {
+  color: #fff;
+  background: black;
+}
+
+th:nth-child(2) {
+  width: 150px;
+}
+
+th:last-child {
+  padding: 0.5rem;
+}
+
+/* body of the table */
+tbody tr:nth-child(odd) {
+  background-color: #b7b2b2;
+}
+
+/* button customazation */
+
+button {
+  padding: 0.5rem 0.6rem;
+}
+
+button:hover {
+  background-color: #000;
+  cursor: pointer;
+  color: #fff;
+  border: 0;
+}

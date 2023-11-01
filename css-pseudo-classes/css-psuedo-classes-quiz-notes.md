@@ -6,6 +6,7 @@ After completing this exercise, you should be able to discuss or answer the foll
 
 - What is a pseudo-class?
   -A psudo class targets the first second or whichever of that targeted element with :child psudo class selector after the selector
+
 - What are CSS pseudo-classes useful for?
   -targeting the same elements without having to use id's or classess all the time.
 
