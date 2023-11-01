@@ -38,6 +38,7 @@ function findWinningPlayer(players) {
 }
 
 // games
+// loggers
 
 function runCardGame(players, numPerHand) {
   const ranks = [
