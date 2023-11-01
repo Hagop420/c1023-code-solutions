@@ -5,3 +5,4 @@ const isPalindromic = (string) => {
   }
   return string === string.split('').reverse().join('');
 };
+// console.log(palindromic())
