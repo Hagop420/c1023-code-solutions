@@ -3,12 +3,12 @@
 }
 
 body {
-  background-color: rgba(106, 171, 220, 0.317);
+  background-color: rgba(74, 146, 201, 0.758);
 }
 
 .column-bl {
   text-align: center;
-  background-color: blue;
+  background-color: #fff;
   width: 120px;
 
   /* height:110px; */
@@ -23,6 +23,7 @@ body {
 }
 
 h2 {
+  color: #fff;
   text-align: center;
   font-family: sans-serif;
 }
@@ -35,6 +36,8 @@ main {
 .info {
   text-align: center;
   display: block;
+  color: #fff;
+  font-family: sans-serif;
 }
 
 .info > p {
