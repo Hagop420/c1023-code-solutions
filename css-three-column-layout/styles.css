@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgba(106, 171, 220, 0.317);
+}
+
+.column-bl {
+  text-align: center;
+  background-color: blue;
+  width: 120px;
+
+  /* height:110px; */
+  margin: auto;
+  padding: 25px;
+  border-radius: 50%;
+}
+
+.column-bl > img {
+  height: 50px;
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+  font-family: sans-serif;
+}
+
+/* flex making */
+main {
+  padding: 20px;
+}
+
+.info {
+  text-align: center;
+  display: block;
+}
+
+.info > p {
+  max-width: 220px;
+  min-width: 260px;
+  text-align: center;
+  margin: auto;
+}
+
+#main-flex-area {
+  display: flex;
+  margin: auto;
+  justify-content: space-around;
+}
