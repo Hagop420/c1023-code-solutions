@@ -1,0 +1,75 @@
+/* font default for entire webpage */
+body {
+  font-family: sans-serif;
+  background: #ddd;
+}
+h1 {
+  text-align: center;
+  font-weight: bold;
+}
+
+h2 {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+/* flexing the whole flexbox container div */
+#flexbox-container {
+  display: flex;
+  justify-content: center;
+}
+
+#flexbox-container > .flex-para {
+  min-width: 250px;
+  max-width: 450px;
+}
+
+.flex-para-one {
+  min-width: 250px;
+  max-width: 180px;
+}
+
+/* 2nd row column flex */
+
+.row {
+  flex-basis: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* rev flex */
+
+.reversed-flex {
+  display: flex;
+  justify-content: center;
+
+  /* flex-direction: column-reverse; */
+}
+
+.reversed-flex > .para {
+  min-width: 250px;
+  max-width: 750px;
+}
+
+.reversed-flex > h2 {
+  text-align: start;
+}
+
+.reversed-flex > p {
+  min-width: 450px;
+  max-width: 250px;
+}
+
+.forward-flex-mario {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+}
+
+.forward-flex-mario > .para {
+  min-width: 720px;
+  max-width: 570px;
+}
+
+/* .img-flex{flex-direction: column;display:flex} */
