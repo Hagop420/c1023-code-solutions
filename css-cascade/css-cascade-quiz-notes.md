@@ -5,10 +5,10 @@
 After completing this exercise, you should be able to discuss or answer the following questions:
 
 - What are the four components of "the Cascade".
-  1 user-agent (browser)
-  2 user
-  3 author (developer)
-  4 CSS @keyframe animations
+  1 inheritance
+  2 important
+  3 source order
+  4 specificity
 - What does the term "source order" mean with respect to CSS?
   -the lowest property with the class on the same eleent will always take presidence
 - How is it possible for the styles of an element to be applied to its children as well without an additional CSS rule?
