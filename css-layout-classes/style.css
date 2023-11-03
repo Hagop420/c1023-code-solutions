@@ -22,11 +22,11 @@ h2 {
 }
 
 #flexbox-container > .flex-para {
-  width: 750px;
+  width: 75%;
 }
 
 .flex-para-one {
-  width: 450px;
+  width: 15%;
 }
 
 /* 2nd row column flex */
@@ -44,7 +44,7 @@ h2 {
 }
 
 .reversed-flex > .para {
-  width: 750px;
+  width: 45%;
 }
 
 .reversed-flex > h2 {
@@ -63,7 +63,7 @@ h2 {
 }
 
 .forward-flex-mario > .para {
-  width: 750px;
+  width: 35%;
 }
 
 /* .img-flex{flex-direction: column;display:flex} */
