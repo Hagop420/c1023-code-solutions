@@ -3,6 +3,7 @@ body {
   font-family: sans-serif;
   background: #ddd;
 }
+
 h1 {
   text-align: center;
   font-weight: bold;
@@ -21,19 +22,16 @@ h2 {
 }
 
 #flexbox-container > .flex-para {
-  min-width: 250px;
-  max-width: 450px;
+  width: 750px;
 }
 
 .flex-para-one {
-  min-width: 250px;
-  max-width: 180px;
+  width: 450px;
 }
 
 /* 2nd row column flex */
 
 .row {
-  flex-basis: 100%;
   display: flex;
   justify-content: center;
 }
@@ -43,13 +41,10 @@ h2 {
 .reversed-flex {
   display: flex;
   justify-content: center;
-
-  /* flex-direction: column-reverse; */
 }
 
 .reversed-flex > .para {
-  min-width: 250px;
-  max-width: 750px;
+  width: 750px;
 }
 
 .reversed-flex > h2 {
@@ -68,8 +63,7 @@ h2 {
 }
 
 .forward-flex-mario > .para {
-  min-width: 720px;
-  max-width: 570px;
+  width: 750px;
 }
 
 /* .img-flex{flex-direction: column;display:flex} */
