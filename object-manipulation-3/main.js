@@ -34,6 +34,7 @@ function findWinningPlayer(players) {
     }
   }
 
+  // comms 3
   return winningPlayers;
 }
 
