@@ -1,0 +1,26 @@
+@media (width <=768px) {
+  .img-gradient {
+    object-fit: fill;
+    margin: 40px;
+
+    /* background-size:cover; */
+    height: 75vh;
+  }
+
+  .asbolute-paragraph {
+    /* top:0px; */
+    width: 80%;
+  }
+}
+
+@media (width <=774px) {
+  nav#navbar {
+    display: block;
+    margin: auto;
+    text-align: center;
+  }
+
+  ul li {
+    font-size: 12.5px;
+  }
+}
