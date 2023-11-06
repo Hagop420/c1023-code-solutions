@@ -8,7 +8,7 @@ const countDisplay = document.querySelector('.click-count');
 
 mainBtn.addEventListener('click', (e) => {
   counter += 1;
-  countDisplay.innerHTML = `Clicks ${counter}`;
+  countDisplay.innerHTML = `Clicks: ${counter}`;
 
   if (counter <= 4) {
     btn.className = 'hot-button cold';
