@@ -23,4 +23,4 @@ btn.addEventListener('click', (e) => {
   console.log(e.target);
 });
 
-btn.textContent = 'Cold button';
+// btn.textContent = 'Cold button';
