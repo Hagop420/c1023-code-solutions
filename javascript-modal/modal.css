@@ -1,0 +1,14 @@
+.capital-case {
+  background: blue;
+  color: #fff;
+  padding: 10px 30px;
+  border: 0;
+  font-weight: bold;
+  font-size: 1rem;
+  text-transform: capitalize;
+}
+
+.kinda_black {
+  background: darkgray;
+  opacity: 0.5;
+}
