@@ -5,8 +5,7 @@
   height: 100vh;
 }
 
-.Main_Bulb {
-  box-shadow: 10px 10px 321px 34px rgba(255, 255, 0, 0.6);
+.main_Bulb {
   box-shadow: 10px 10px 321px 34px rgba(255, 255, 0, 0.6);
   box-shadow: 10px 10px 321px 34px rgba(255, 255, 0, 0.6);
   height: 300px;
@@ -22,6 +21,7 @@
 .grey {
   background-color: grey;
 }
+
 .wh {
   background-color: #fff;
 }

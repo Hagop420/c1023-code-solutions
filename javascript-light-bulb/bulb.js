@@ -1,6 +1,6 @@
-const mainBulb = document.querySelector('.Main_Bulb');
+const mainBulb = document.querySelector('.main_Bulb');
 
-// mainBulb.className === 'Main_Bulb';
+// mainBulb.className = 'Main_Bulb';
 
 mainBulb.addEventListener('click', () => {
   if (mainBulb.className === 'main_Bulb') {
