@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./bulb.css" />
+    <title>Light Bulb Switcher</title>
+  </head>
+  <body>
+    <div id="flexing-bulb">
+      <div class="Main_Bulb"></div>
+    </div>
+
+    <script>
+      const mainBulb = document.querySelector('.Main_Bulb');
+
+      mainBulb.className === 'Main_Bulb';
+
+      mainBulb.addEventListener('click', () => {
+        if (mainBulb.className === 'Main_Bulb') {
+          document.body.style.backgroundColor = '#000';
+          mainBulb.className = 'Main_Bulb grey';
+          mainBulb.style.boxShadow = '2px 2px 1rem #f4f4f4';
+        } else if (mainBulb.className === 'Main_Bulb grey') {
+          document.body.style.backgroundColor = '#fff';
+
+          mainBulb.className = 'Main_Bulb';
+          mainBulb.style.boxShadow = '6px 12px 1rem black';
+        }
+      });
+    </script>
+  </body>
+</html>
