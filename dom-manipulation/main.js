@@ -8,7 +8,7 @@ $btn.addEventListener('click', (e) => {
   counter += 1;
   countDisplay.textContent = `Clicks: ${counter}`;
 
-  if (counter <= 4) {
+  if (counter < 4) {
     $btn.className = 'hot-button cold';
   } else if (counter < 7) {
     $btn.className = 'hot-button cool';
@@ -18,6 +18,8 @@ $btn.addEventListener('click', (e) => {
     $btn.className = 'hot-button warm';
   } else if (counter < 16) {
     $btn.className = 'hot-button hot';
+  } else {
+    $btn.className = 'hot-button nuclear';
   }
 
   console.log(e.target);
