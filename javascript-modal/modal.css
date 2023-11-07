@@ -1,14 +1,83 @@
-.capital-case {
-  background: blue;
-  color: #fff;
-  padding: 10px 30px;
-  border: 0;
-  font-weight: bold;
-  font-size: 1rem;
-  text-transform: capitalize;
+body {
+  background: linear-gradient(60deg, #29323c 0%, #485563 100%);
+
+  /* z-index:-1 */
 }
 
-.kinda_black {
-  background: darkgray;
+button {
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+/* capitalize the first letters in text */
+
+.nne {
+  display: none;
+}
+.op-one {
+  opacity: 1;
+}
+.op {
   opacity: 0.5;
+}
+.none {
+  display: none;
+}
+
+.modal-container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+
+  /* height:80vh; */
+  background-color: #fff;
+  width: 300px;
+  padding: 70px;
+  margin: 30vh auto;
+  align-items: center;
+}
+
+#modal-btn,
+.capital-case {
+  top: 5px;
+  border: 0;
+  color: #fff;
+  background: blue;
+  border-radius: 0.3rem;
+  padding: 10px 30px;
+  margin: 10px;
+
+  /* background:#fff; */
+  position: absolute;
+  text-transform: capitalize;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+h1 {
+  font-family: sans-serif;
+}
+
+/* modal inner button */
+
+.modal-content button {
+  border: 0;
+  color: #fff;
+
+  /* position:absolute; */
+  z-index: 12222222211;
+  background: orangered;
+  border-radius: 0.3rem;
+  padding: 10px 50px;
+
+  /* margin:10px; */
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* js class for modal open */
+
+.open_Modal {
+  display: flex;
 }
