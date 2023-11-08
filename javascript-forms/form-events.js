@@ -1,27 +1,24 @@
-const inp = document.querySelectorAll('input');
-const formSubmit = document.querySelector('form');
+const $inp = document.querySelectorAll('input');
+const $textarea = document.querySelector('textarea');
 
-const handleFocus = (event) => {
+function handleFocus(event) {
   console.log(`${event.type} event fired`);
   console.log(`event.target.name: ${event.target.name}`);
-};
-const handleBlur = (event) => {
+}
+function handleBlur(event) {
   console.log(`${event.type} event fired`);
   console.log(`event.target.name: ${event.type}`);
-};
-const handleInput = (event) => {
+}
+function handleInput(event) {
   console.log(`${event.target.name} event fired`);
   console.log(`event.target.value: ${event.target.value}`);
-};
+}
 
-const handleSubmit = (e) => {
-  e.preventDefault();
-};
-
-inp.forEach((inp) => {
-  inp.addEventListener('focus', handleFocus);
-  inp.addEventListener('blur', handleBlur);
-  inp.addEventListener('input', handleInput);
+$inp.forEach((inp) => {
+  $inp.addEventListener('focus', handleFocus);
+  $inp.addEventListener('blur', handleBlur);
+  $inp.addEventListener('input', handleInput);
 });
-
-formSubmit.addEventListener('submit', handleSubmit);
+$textarea.addEventListener('focus', handleFocus);
+$textarea.addEventListener('blur', handleBlur);
+$textarea.addEventListener('input', handleInput);
