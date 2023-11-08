@@ -1,0 +1,52 @@
+#flex-type {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  height: 50vh;
+}
+
+span {
+  font-size: 3rem;
+}
+
+.space {
+  padding-right: 10px !important;
+  white-space: normal;
+}
+
+/* Apply white-space property to the container */
+
+/* Adjust the property as needed, e.g., white-space: pre; for non-wrapping or white-space: pre-line; for wrapping */
+body {
+  white-space: nowrap;
+}
+
+/* .space{white-space:normal} */
+
+.incorrect-key {
+  color: red;
+  border-bottom: 0.2rem solid;
+  padding-left: 5px;
+}
+
+.bl {
+  color: #000;
+  border-bottom: 0.2rem solid;
+  padding-left: 7px;
+}
+
+.correct-key {
+  color: greenyellow;
+}
+
+.g {
+  border-bottom: 0.2rem solid;
+  padding-left: 2px;
+}
+
+/* .r{border-bottom: .2rem solid;padding-left: 2px;} */
+
+.no-more-border {
+  border-bottom: 0;
+}
