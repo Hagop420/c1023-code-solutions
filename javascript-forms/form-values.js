@@ -14,3 +14,5 @@ const handleSubmit = (e) => {
 };
 
 $formSubmit.addEventListener('submit', handleSubmit);
+
+// git purposes
