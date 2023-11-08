@@ -20,7 +20,7 @@ window.addEventListener('keydown', (event) => {
   }
 
   if (currKey === spanSp) {
-    currKeyPoint.className = 'no-more-border correct-key';
+    currKeyPoint.className = 'no-more-border correct-key space';
     // console.log(currKeyPoint.nextSibling);
     currVal++;
   }
