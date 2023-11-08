@@ -1,4 +1,5 @@
 const $formSubmit = document.querySelector('form');
+const $mm = document.querySelector('#user-email').labels;
 
 const handleSubmit = (e) => {
   e.preventDefault();
@@ -9,8 +10,9 @@ const handleSubmit = (e) => {
     email: $formSubmit.elements.email.value,
     Message: $formSubmit.elements.message.value,
   };
-  $formSubmit.reset();
   console.log('messageData:', objStorageKeys);
+  console.log($mm);
+  $formSubmit.reset();
 };
 
 $formSubmit.addEventListener('submit', handleSubmit);
