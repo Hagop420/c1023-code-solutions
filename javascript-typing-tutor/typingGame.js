@@ -12,7 +12,7 @@ window.addEventListener('keydown', (event) => {
   const currKeyPoint = allLetters[currVal];
   if (currKey === currKeyPoint.textContent) {
     currKeyPoint.className = 'no-more-border correct-key';
-    console.log(currKeyPoint.nextElementSibling);
+    // console.log(currKeyPoint.nextElementSibling);
     currKeyPoint.nextElementSibling.className = 'g';
     currVal++;
   } else {
@@ -21,7 +21,7 @@ window.addEventListener('keydown', (event) => {
 
   if (currKey === spanSp) {
     currKeyPoint.className = 'no-more-border correct-key';
-    console.log(currKeyPoint.nextSibling);
+    // console.log(currKeyPoint.nextSibling);
     currVal++;
   }
 
@@ -30,19 +30,19 @@ window.addEventListener('keydown', (event) => {
 
 // spanSp.className = 'space'
 
-window.addEventListener('keyup', (ev) => {
-  const currKey = ev.key;
+// window.addEventListener('keyup', (ev) => {
+//   // const currKey = ev.key;
 
-  if (currKey === ' ') {
-    // Append the space to a specific element with an ID (e.g., a <div> with id "output")
+//   // if (currKey === ' ') {
+//   //   // Append the space to a specific element with an ID (e.g., a <div> with id "output")
 
-    // Or store the space character in a variable
+//   //   // Or store the space character in a variable
 
-    spanSp.forEach((sp) => {
-      if (currKey === ' ') sp.className = 'space';
-    });
-  }
-});
+//   //   spanSp.forEach((sp) => {
+//   //     if (currKey === ' ') sp.className = 'space';
+//   //   });
+//   // }
+// });
 
 //   window.addEventListener('keyup' ,(ev) =>{
 // const currKeyPoint = allLetters[currVal]
