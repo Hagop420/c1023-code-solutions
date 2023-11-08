@@ -15,9 +15,9 @@ function handleInput(event) {
 }
 
 $inp.forEach((inp) => {
-  $inp.addEventListener('focus', handleFocus);
-  $inp.addEventListener('blur', handleBlur);
-  $inp.addEventListener('input', handleInput);
+  inp.addEventListener('focus', handleFocus);
+  inp.addEventListener('blur', handleBlur);
+  inp.addEventListener('input', handleInput);
 });
 $textarea.addEventListener('focus', handleFocus);
 $textarea.addEventListener('blur', handleBlur);
