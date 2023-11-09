@@ -11,6 +11,8 @@ After completing this exercise, you should be able to discuss or answer the foll
 
 ## Notes
 
+<!-- comment for git purposes -->
+
 All student notes should be written here.
 
 How to write `Code Examples` in markdown
