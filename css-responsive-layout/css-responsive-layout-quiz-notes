@@ -5,10 +5,11 @@
 After completing this exercise, you should be able to discuss or answer the following questions:
 
 - What is a **breakpoint** in responsive Web design?
-
+-In web design/development a meia query breakpoint is defined as a point where the default screen reaches and hits a certain width or screen height position
 - What is the advantage of using a percentage (_e.g._ `50%`) width instead of a fixed (_e.g._ `px`) width for a "column" class in a responsive layout?
-
+-Using a % instead of a width for anything flexbox might and is helpful because of it's capability to move along with the page and have more text and content responsiveness rather then having a fixed position like a px which wownt move along with the page
 - If you introduce CSS rules for a smaller `min-width` _after_ the styles for a larger `min-width` in your style sheet, the CSS rules for the **smaller** `min-width` will "win". Why is that?
+-Because in css there is a functionallity/order that the last or the final ruleset on the css file will take presidence.
 
 ## Notes
 
