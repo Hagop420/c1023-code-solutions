@@ -26,9 +26,9 @@ ul li {
   /* padding:10px */
 }
 
-.blackTxt {
-  color: #000;
-}
+/* .blackTxt:last-child {
+  color: red;
+} */
 
 /* affecting on links hovering */
 
@@ -37,7 +37,7 @@ ul li {
 nav li.custom-button-nav {
   background-color: #454545;
   padding: 10px 20px;
-  color: #fff;
+  color: #fff !important;
   border-radius: 0.5rem;
 }
 
