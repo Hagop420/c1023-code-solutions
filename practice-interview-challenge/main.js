@@ -1,4 +1,4 @@
-function getRangeReport(start, end) {
+function getRangeReport1(start, end) {
   // problem 1
   const numbers = [];
 
@@ -16,18 +16,56 @@ function getRangeReport(start, end) {
 
   const range = Array(end - start + 1)
     .fill()
-    .map((_, idx) => start + idx);
+    .map((idx) => start + idx);
 
-  const AV = numbers.map((avNum) => avNum / 2);
 
-  // const oddNums = allOdds.filter((numOdd => ))
   return {
     total: sum,
     odds: numOdd,
     evens: numEven,
     range,
-    average: AV,
+    average: sum / range.length,
   };
 }
+
+
+
+function getRangeReport(start , end){
+  // 1st
+  const nums = []
+  for(let i = start; i <= end; i+=1){
+    nums.push(i)
+  }
+
+  const sum = nums.reduce((acc, num) => acc + num, 0);
+
+
+  const numOdd = nums.filter(diff => diff % 2 === 1)
+
+
+  const numEven = nums.filter(diff => diff % 2 !== 1)
+
+  const numRange = Array(end - start + 1)
+    .fill()
+    .map((idx) => start + idx);
+
+
+
+  return{
+        total: sum,
+    odds: numOdd,
+    evens: numEven,
+    range: numEven,
+    // average: sum / range.length,
+
+  }
+}
+
+console.log(getRangeReport1(1, 10));
+
+
+
+
+
 
 console.log(getRangeReport(1, 10));
