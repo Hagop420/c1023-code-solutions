@@ -34,8 +34,18 @@ body {
 
 /* Media's are here for responsive layout */
 
-@media (width >=768px) {
+@media (width >==576px) {
   .col-sm-half {
     flex-basis: 50%;
+  }
+}
+
+@media (width >==768px) {
+  .col-lg-third {
+    flex-basis: 33.3%;
+  }
+
+  .col-lg-fourth {
+    flex-basis: 25%;
   }
 }
