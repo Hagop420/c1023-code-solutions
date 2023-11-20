@@ -6,10 +6,11 @@ function myNumber() {
   if (zero === 0) {
     settingTheHOneInterval.textContent = '~earth bellllllooooowwwww us~';
     settingTheHOneInterval.classList.add('upper');
+    clearInterval(intervalToBeCleared);
   } else {
     settingTheHOneInterval.textContent = zero;
     zero--;
   }
 }
 
-setInterval(myNumber, 1000);
+const intervalToBeCleared = setInterval(myNumber, 1000);
