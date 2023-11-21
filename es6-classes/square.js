@@ -4,18 +4,17 @@
 // Square instantiation
 
 class Square extends Shape {
-  constructor(width, area, perimeter) {
-    super(area, perimeter);
+  constructor(width) {
+    super(width * width, 4 * width ** 2);
     this.width = width;
   }
 
   describe() {
     return `The shape is a Square and it has a width of ${this.width}
     and the previous constructor's width and paremeter equal to:
-    ${this.area * this.perimeter}`;
+    ${super.describe()}, Width: ${this.width}`;
   }
 }
 
-const squareNew = new Square(12.122234, 123, 12112234454634);
-
+const squareNew = new Square(220);
 console.log(squareNew.describe());
