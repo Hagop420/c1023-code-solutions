@@ -1,0 +1,17 @@
+h1 {
+  font-family: 'Roboto', sans-serif;
+}
+body > h2 {
+  font-family: 'Martian Mono', monospace;
+  font-style: italic;
+}
+
+body > h2 + p {
+  font-family: 'Schoolbell', cursive;
+  line-height: 2;
+}
+
+body > h2 + p + p {
+  font-family: 'Schoolbell', cursive;
+  line-height: 2;
+}
