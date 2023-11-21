@@ -1,0 +1,42 @@
+#carousel{
+  display: flex;
+  justify-content: center;
+  align-items:center
+}
+
+/* Hide theese image's and  show them again in JavaScript */
+
+.hidden{visibility: hidden;}
+.visible{
+  visibility: visible;
+
+}
+.block{
+  display: block;
+
+}
+img{margin-left:60px;display: block;}
+
+/* FONT awesome icon's */
+.center{
+  display: flex;
+justify-content: center;
+gap:10px
+}
+
+i{
+/* font-size:25px; */
+cursor:pointer;
+text-align: center;
+}
+
+.dot{
+  justify-content: space-between;
+}
+
+.clr{color:#000}
+
+
+
+
+/* First left chevron is disabled */
