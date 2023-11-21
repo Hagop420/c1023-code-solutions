@@ -31,12 +31,21 @@ text-align: center;
 }
 
 .dot{
+color:#fff;
+border:#000 solid 2px;
+border-radius:50%;
   justify-content: space-between;
 }
 
 .clr{color:#000}
 
 
+
+.no-button-i-customizations{
+  color:#000;
+border:0;
+font-size:20px
+}
 
 
 /* First left chevron is disabled */

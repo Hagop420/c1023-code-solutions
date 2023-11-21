@@ -10,6 +10,36 @@ const imgOne = document.querySelector('.one')
 
 
 
+// getting all of the button's
+const allBtns = document.querySelector('.center')
+
+console.log(allBtns.children[0].classList.add('no-button-i-customizations'))
+
+
+
+
+const btnOne = document.querySelector('.btn1');
+btnOne.addEventListener('click' , () => {
+  imgOne.src = './images/025.png'
+})
+
+const btnTwo = document.querySelector('.btn2');
+btnTwo.addEventListener('click' , () => {
+  imgOne.src = './images/039.png'
+})
+
+
+const btnThree = document.querySelector('.btn3');
+btnThree.addEventListener('click' , () => {
+  imgOne.src = './images/007.png'
+})
+const btnFour = document.querySelector('.btn4');
+btnFour.addEventListener('click' , () => {
+  imgOne.src = './images/001.png'
+})
+
+
+
 
 let slidingPoint = 0
 
@@ -61,11 +91,14 @@ function intervalLooping(){
       // 0 < 2    //true
       // console.log(slidingPoint ===  images.length - 2)
   if(slidingPoint < images.length){
+
     imgOne.setAttribute('src' , images[slidingPoint])
+    allBtns.children[1].classList.add('no-button-i-customizations')
   }else{
-    clearInterval(clearCarousel)
     slidingPoint = 0;
+    // allBtns.children[1].classList.add('dot')
     imgOne.setAttribute('src' , images[slidingPoint])
+    clearInterval(clearCarousel)
   }
 }
 
@@ -84,12 +117,12 @@ function backwardArr(){
 
       // 0 < 2    //true
       // console.log(slidingPoint ===  images.length - 2)
-  if(backwardPoint < images.length){
+  if(backwardPoint < images.length - 1){
     imgOne.setAttribute('src' , images[backwardPoint])
   }else{
-        clearInterval(clearCarousel)
-    slidingPoint = 0;
+    // slidingPoint = 0;
     imgOne.setAttribute('src' , images[backwardPoint])
+    // clearInterval(clearCarousel)
   }
 }
 
