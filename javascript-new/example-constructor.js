@@ -1,6 +1,6 @@
 // function using the new keyword ExampleConstructor
 
-function ExampleConstructor(one) {}
+function ExampleConstructor() {}
 
 console.log(ExampleConstructor.prototype);
 console.log(`${typeof ExampleConstructor.prototype}`);
@@ -11,5 +11,5 @@ const newKeywordArg = new ExampleConstructor();
 
 console.log(
   'The typeof in the function with a new argument is a:',
-  newKeywordArg
+  newKeywordArg instanceof ExampleConstructor
 );
