@@ -13,3 +13,4 @@ console.log(
   'The typeof in the function with a new argument is a:',
   newKeywordArg instanceof ExampleConstructor
 );
+// git purposes comment
