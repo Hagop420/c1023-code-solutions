@@ -15,11 +15,10 @@ xhr.addEventListener('load', () => {
   console.log(xhr.response);
 
   // looping throughh the responses
-  for (let i = 0; i < xhr.response.length; i++) {
-    const $createLI = document.createElement('li');
-    $createLI.textContent = xhr.response[i].name;
-
-    $ul.appendChild($createLI);
-  }
+  xhr.response.forEach((xhrEl) => {
+    const liMake = document.createElement('li');
+    liMake.textContent = xhrEl.name;
+    $ul.appendChild(liMake);
+  });
 });
 xhr.send();
