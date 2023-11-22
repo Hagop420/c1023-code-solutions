@@ -52,14 +52,14 @@ function getImages(target) {
     if (i === target) {
       const clr = Math.floor(Math.random() * arrRandomClrs.length);
       document.body.style.background = arrRandomClrs[clr];
-      imgs[i].classList.add('img');
-      imgs[i].classList.remove('hidden');
+      imgs[i].className = 'carousel-image';
+      // imgs[i].classList.remove('hidden');
       // controlButtons[i].classList.add('fa-solid')
-      controlButtons[i].className = 'fa OR fa-circle';
+      controlButtons[i].className = 'fas OR fa-circle';
     } else {
-      imgs[i].className = 'img hidden';
-      controlButtons[i].classList.add('button-toggler-controls');
-      controlButtons[i].className = 'far button-toggler-controls';
+      imgs[i].className = 'carousel-image hidden';
+      // controlButtons[i].classList.add('button-toggler-controls');
+      // controlButtons[i].className = 'far button-toggler-controls';
       controlButtons[i].className = 'fa fa-circle';
     }
   }
@@ -82,7 +82,7 @@ function moveNextVal() {
   }
 }
 
-function getPreviousIndex() {
+function getPreviousIndex(e) {
   if (currVal === 0) {
     return imgs.length - 1;
   } else {
@@ -93,20 +93,27 @@ function getPreviousIndex() {
 function clickerAnimation(e) {
   if (e.target.matches('.back')) {
     getImages(getPreviousIndex());
+    return;
   }
 
   if (e.target.matches('.forward')) {
     getImages(moveNextVal());
+    return;
   }
 
-  for (let i = 0; i < imgs.length; i++) {
-    if (e.target === imgs[i]) {
+  if (!e.target.matches('.fa-solid')) {
+    return;
+  }
+
+  for (let i = 0; i < controlButtons.length; i++) {
+    if (e.target === controlButtons[i]) {
       getImages(i);
+      break;
     }
   }
 }
 
-const $carouselContainer = document.querySelector('#carousel');
-$carouselContainer.addEventListener('click', clickerAnimation);
+const mainCarousel = document.querySelector('#carousel');
+mainCarousel.addEventListener('click', clickerAnimation);
 
 setTimerAutoScroll();
