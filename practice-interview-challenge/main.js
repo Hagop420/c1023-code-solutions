@@ -18,7 +18,6 @@ function getRangeReport1(start, end) {
     .fill()
     .map((idx) => start + idx);
 
-
   return {
     total: sum,
     odds: numOdd,
@@ -28,44 +27,35 @@ function getRangeReport1(start, end) {
   };
 }
 
-
-
-function getRangeReport(start , end){
-  // 1st
-  const nums = []
-  for(let i = start; i <= end; i+=1){
-    nums.push(i)
-  }
-
-  const sum = nums.reduce((acc, num) => acc + num, 0);
-
-
-  const numOdd = nums.filter(diff => diff % 2 === 1)
-
-
-  const numEven = nums.filter(diff => diff % 2 !== 1)
-
-  const numRange = Array(end - start + 1)
-    .fill()
-    .map((idx) => start + idx);
-
-
-
-  return{
-        total: sum,
-    odds: numOdd,
-    evens: numEven,
-    range: numEven,
-    // average: sum / range.length,
-
-  }
-}
-
 console.log(getRangeReport1(1, 10));
 
+// function getRangeReport(start , end){
+//   // 1st
+//   const nums = []
+//   for(let i = start; i <= end; i+=1){
+//     nums.push(i)
+//   }
 
+//   const sum = nums.reduce((acc, num) => acc + num, 0);
 
+//   const numOdd = nums.filter(diff => diff % 2 === 1)
 
+//   const numEven = nums.filter(diff => diff % 2 !== 1)
 
+//   const numRange = Array(end - start + 1)
+//     .fill()
+//     .map((idx) => start + idx);
 
-console.log(getRangeReport(1, 10));
+//   return{
+//         total: sum,
+//     odds: numOdd,
+//     evens: numEven,
+//     range: numEven,
+//     // average: sum / range.length,
+
+//   }
+// }
+
+// console.log(getRangeReport1(1, 10));
+
+// console.log(getRangeReport(1, 10));
