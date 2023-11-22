@@ -16,7 +16,7 @@ function getRangeReport1(start, end) {
 
   const range = Array(end - start + 1)
     .fill()
-    .map((idx) => start + idx);
+    .map((i, idx) => start + idx);
 
   return {
     total: sum,
