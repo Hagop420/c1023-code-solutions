@@ -1,40 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JavaScript Carousel</title>
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-
-
-
-  <div id="carousel">
-    <i class="fas fa-chevron-left" style="color:darkgrey" class="grey"></i>
-    <div class="carousel-inner">
-      <div class="img-pikachu">
-        <img src="./images/025.png" class="one" alt="Carousel_one_img">
-        <img src="./images/001.png" class="hidden" alt="Carousel_one_img">
-        <img src="./images/001.png" class="hidden" alt="Carousel_one_img">
-        <div class="center">
-          <i class="dot fa-solid default-btn fa-circle btn1"></i>
-       <i class="dot fa-solid fa-circle btn2"></i>
-       <i class="dot fa-solid fa-circle btn3"></i>
-       <i class="dot fa-solid fa-circle btn4"></i>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carousel From Scratch</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div id="carousel">
+      <i class="fas fa-chevron-left back" style="color: darkgrey"></i>
+      <div class="carousel-image-container">
+        <img src="./images/025.png" alt="" />
+        <img src="./images/039.png" class="hidden" alt="" />
+        <img src="./images/007.png" class="hidden" alt="" />
+        <img src="./images/004.png" class="hidden" alt="" />
+        <img src="./images/001.png" class="hidden" alt="" />
+        <div class="button-toggler-controls">
+          <i class="fa-solid fa-circle btnDefault"></i>
+          <i class="fa-solid fa-circle"></i>
+          <i class="fa-solid fa-circle"></i>
+          <i class="fa-solid fa-circle"></i>
+          <i class="fa-solid fa-circle"></i>
         </div>
-        <i class="fas fa-chevron-right"></i>
       </div>
+      <i class="fas fa-chevron-right forward"></i>
     </div>
 
-  </div>
-</div>
-
-  </div>
-
-  <script src="main.js"></script>
-</body>
+    <script src="./main.js"></script>
+  </body>
 </html>

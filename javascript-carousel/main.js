@@ -1,240 +1,112 @@
-// // // Targeting the chevron's of right even't handler
-// // const chevronRights = document.querySelector('i.fa-chevron-right')
-
-
-// // const chevronLefts = document.querySelector('i.fa-chevron-left')
-
-// // // Img 1
-// // const imgOne = document.querySelector('.one')
-
-
-
-
-// // const btnDef = document.querySelector('.default-btn')
-// // // getting all of the button's
-
-
-// // // const btnOne = document.querySelector('.btn1');
-// // // btnOne.addEventListener('click' , () => {
-// // //   imgOne.src = './images/025.png'
-// // // })
-
-// // // const btnTwo = document.querySelector('.btn2');
-// // // btnTwo.addEventListener('click' , () => {
-// // //   imgOne.src = './images/039.png'
-// // // })
-
-
-// // // const btnThree = document.querySelector('.btn3');
-// // // btnThree.addEventListener('click' , () => {
-// // //   imgOne.src = './images/007.png'
-// // // })
-// // // const btnFour = document.querySelector('.btn4');
-// // // btnFour.addEventListener('click' , () => {
-// // //   imgOne.src = './images/001.png'
-// // // })
-
-
-
-
-// // let slidingPoint = 0
-
-
-
-
-// // // For chevron right arrow
-// // function loopInterval(){
-
-
-// //   chevronRights.addEventListener('click' , () => {
-// //   intervalLooping()
-// //   // loopingBtns()
-
-
-
-// // })
-// // }
-
-
-
-
-
-// // // backward chevron is clicke'd fire off this event handler
-
-
-// // chevronLefts.addEventListener('click' , () => {
-// //   backwardArr()
-// // })
-
-
-
-
-
-
-// // const clearCarousel = setInterval(intervalLooping, 3000);
-
-// // function intervalLooping(){
-// //   slidingPoint++
-// //     const images = ['./images/025.png' ,
-// //     './images/039.png', './images/007.png' ,
-// //     './images/001.png' , './images/004.png' ,
-// //     './images/007.png' , './images/025.png']
-
-
-// //       // 0 < 2    //true
-// //       // console.log(slidingPoint ===  images.length - 2)
-// //   if(slidingPoint < images.length){
-
-// //     imgOne.setAttribute('src' , images[slidingPoint])
-// //         btnDef.classList.remove('clr')
-
-// //     // allBtns.children[1].classList.add('no-button-i-customizations')
-// //   }else{
-// //     slidingPoint = 0;
-
-// //     // allBtns.children[1].classList.add('dot')
-// //     imgOne.setAttribute('src' , images[slidingPoint])
-// //     clearInterval(clearCarousel)
-// //   }
-// // }
-
-
-
-// // let backwardPoint = 0
-
-// // function backwardArr(){
-// //   backwardPoint--
-
-// //     const images = ['./images/025.png' ,
-// //     './images/039.png', './images/007.png' ,
-// //     './images/001.png' , './images/004.png' ,
-// //     './images/007.png' , './images/025.png']
-
-
-// //       // 0 < 2    //true
-// //       // console.log(slidingPoint ===  images.length - 2)
-// //       btnLoopBl()
-// //   if(backwardPoint < images.length){
-// //     imgOne.setAttribute('src' , images[backwardPoint])
-// //   }else{
-// //     slidingPoint = 0;
-// //     imgOne.setAttribute('src' , images[backwardPoint])
-// //     clearInterval(clearCarousel)
-// //   }
-// // }
-
-
-
-
-
-// // // Interval method
-
-
-// // loopInterval()
-
-
-
-// // // looping on the radio FA icon's
-
-// // const allBtns = document.querySelectorAll('.fa-solid')
-
-
-
-
-
-// // // button's become black and change
-// // function btnLoopBl(){
-
-// // allBtns.forEach(btnEl => {
-// //   btnEl.addEventListener('click' , () => {
-// //     intervalLooping()
-// //     btnEl.classList.add('no-button-i-customizations')
-
-// //   })
-// // })
-// // }
-
-
-
-// //
-
-
-
-
-// const chevronRights = document.querySelector('i.fa-chevron-right')
-
-
-// const chevronLefts = document.querySelector('i.fa-chevron-left')
-
-// // Img 1
-// const imgOne = document.querySelector('.one')
-
-
-
-
-// const btnDef = document.querySelector('.default-btn')
-
-
-
-// chevronRights.addEventListener('click' , () => {
-//   intervalLooping()
-// })
-
-
-
-// chevronLefts.addEventListener('click' , () => {
-//   backwardArr()
-// })
-
-
-
-
-// let slidingPoint = 0
-
-
-// const clearCarousel = setInterval(intervalLooping, 3000);
-
-
-
-// let backwardPoint = 1
-
-
-
-
-// function intervalLooping(){
-//   slidingPoint++
-//     const images = ['./images/025.png' ,
-//     './images/039.png', './images/007.png' ,
-//     './images/001.png' , './images/004.png' ,
-//     './images/007.png' , './images/025.png']
-
-//   if(slidingPoint < images.length){
-
-//     imgOne.setAttribute('src' , images[slidingPoint])
-//         btnDef.classList.remove('clr')
-//   }else{
-//     slidingPoint = 0;
-//     imgOne.setAttribute('src' , images[slidingPoint])
-//     clearInterval(clearCarousel)
-//   }
+// variables
+const imgs = document.querySelectorAll('img');
+const controlButtons = document.querySelectorAll('.fa-solid');
+
+// for(let i = 0; i < controlButtons.length; i++){
 // }
+controlButtons[0].classList.add('OR');
 
+// getting the right and left chevron icon's
 
+let currVal = 0;
+let idTime;
 
+// function for all of the images
+controlButtons[0].className = 'fa OR fa-circle';
 
-// function backwardArr(){
-//    backwardPoint--
+function getImages(target) {
+  //
+  for (let i = 0; i < imgs.length; i++) {
+    const arrRandomClrs = [
+      'red',
+      'blue',
+      'green',
+      'yellow',
+      'orange',
+      'purple',
+      'pink',
+      'brown',
+      'cyan',
+      'magenta',
+      'lime',
+      'teal',
+      'indigo',
+      'violet',
+      'maroon',
+      'olive',
+      'navy',
+      'aquamarine',
+      'coral',
+      'gold',
+      'gray',
+      'silver',
+      'black',
+      'white',
+      '#FF5733', // Hex color
+      '#8A2BE2', // Hex color
+      '#00FF7F', // Hex color
+      '#FFD700', // Hex color
+      '#4CAF50', // Hex color
+      '#FF6347', // Hex color
+    ];
+    if (i === target) {
+      const clr = Math.floor(Math.random() * arrRandomClrs.length);
+      document.body.style.background = arrRandomClrs[clr];
+      imgs[i].classList.add('img');
+      imgs[i].classList.remove('hidden');
+      // controlButtons[i].classList.add('fa-solid')
+      controlButtons[i].className = 'fa OR fa-circle';
+    } else {
+      imgs[i].className = 'img hidden';
+      controlButtons[i].classList.add('button-toggler-controls');
+      controlButtons[i].className = 'far button-toggler-controls';
+      controlButtons[i].className = 'fa fa-circle';
+    }
+  }
+  currVal = target;
+  setTimerAutoScroll();
+}
 
-//     const images = ['./images/025.png' ,
-//     './images/039.png', './images/007.png' ,
-//     './images/001.png' , './images/004.png' ,
-//     './images/007.png' , './images/025.png']
+function setTimerAutoScroll() {
+  clearTimeout(idTime);
+  idTime = setTimeout(function () {
+    getImages(moveNextVal());
+  }, 3000);
+}
 
-//   if(backwardPoint < images.length){
-//     imgOne.setAttribute('src' , images[backwardPoint])
-//     clearInterval(clearCarousel)
-//   }else{
-//     slidingPoint = 0;
-//     imgOne.setAttribute('src' , images[backwardPoint])
-//   }
-// }
+function moveNextVal() {
+  if (currVal === imgs.length - 1) {
+    return 0;
+  } else {
+    return currVal + 1;
+  }
+}
+
+function getPreviousIndex() {
+  if (currVal === 0) {
+    return imgs.length - 1;
+  } else {
+    return currVal - 1;
+  }
+}
+
+function clickerAnimation(e) {
+  if (e.target.matches('.back')) {
+    getImages(getPreviousIndex());
+  }
+
+  if (e.target.matches('.forward')) {
+    getImages(moveNextVal());
+  }
+
+  for (let i = 0; i < imgs.length; i++) {
+    if (e.target === imgs[i]) {
+      getImages(i);
+    }
+  }
+}
+
+const $carouselContainer = document.querySelector('#carousel');
+$carouselContainer.addEventListener('click', clickerAnimation);
+
+setTimerAutoScroll();
