@@ -1,0 +1,15 @@
+*{margin:0;padding:0;box-sizing: border-box;}
+body{
+  background:lightskyblue
+}
+
+
+main#carousel-flexbox{
+  display:flex;
+  justify-content: center;
+  margin:30px 30px;
+}
+main#carousel-flexbox img{height:30vh}
+
+
+.frame_width_one{width:9110}

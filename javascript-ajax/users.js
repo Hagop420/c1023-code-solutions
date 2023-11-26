@@ -4,9 +4,9 @@ const $ul = document.getElementById('user-list');
 const xhr = new XMLHttpRequest();
 
 // Listning/Calling a API GET request
-xhr.open('GET', 'https://jsonplaceholder.typicode.com/users');
-
-xhr.responseType = 'json';
+// xhr.open('GET', 'https://jsonplaceholder.typicode.com/users');
+xhr.open('GET', 'https://api.nasa.gov/planetary/earth/imagery&api key');
+// xhr.responseType = 'json';
 
 xhr.addEventListener('load', () => {
   // const responseLoop = xhr.response
