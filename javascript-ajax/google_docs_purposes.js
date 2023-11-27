@@ -68,7 +68,7 @@ function mapOfSpace(){
   // Images/Facts about astroids API Pull
   const xhr = new XMLHttpRequest();
   // Include the API key in the URL
-  xhr.open('GET', `https://images-api.nasa.gov?api_key=${apiKey}/search?q={q}` , true);
+  xhr.open('GET', `https://api.nasa.gov/EPIC/api/natural/images?api_key=${apiKey}` , true);
   xhr.responseType = 'json';
   xhr.addEventListener('load', function () {
     console.log(xhr.status);
