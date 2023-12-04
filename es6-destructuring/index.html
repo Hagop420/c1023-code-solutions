@@ -19,13 +19,20 @@
         libraryID: 2345,
       };
 
-      const { title } = book1;
-      const { author } = book1;
-      const { libraryID } = book1;
+      const objDes = { a: book1.title, b: book1.author, c: book1.libraryID };
 
-      const clashed = `The title of the book is ${title}, the author is ${author} and the id card is ${libraryID}`;
+      const objDes2 = { d: book2.title, e: book2.author, f: book2.libraryID };
+
+      const { a, b, c } = objDes;
+
+      const { d, e, f } = objDes2;
+
+      const clashed = `The title of the book is ${a}, the author is ${b} and the id card is ${c}`;
+
+      const clashed2 = `The title of the book is ${d}, the author is ${e} and the id card is ${f}`;
 
       console.log(clashed);
+      console.log(clashed2);
 
       // Array destructuring
 
@@ -52,17 +59,11 @@
         },
       ];
 
-      const obj1 = () => library[0];
-      const obj2 = () => library[1];
-      const obj3 = () => library[2];
+      const [m, n, p] = library;
 
-      const getArrObj1 = obj1();
-      const getArrObj2 = obj2();
-      const getArrObj3 = obj3();
-
-      console.log('book 1:', getArrObj1);
-      console.log('book2:', getArrObj2);
-      console.log('book3:', getArrObj3);
+      console.log('book 1:', m);
+      console.log('book 2:', n);
+      console.log('book 3:', p);
     </script>
   </body>
 </html>
