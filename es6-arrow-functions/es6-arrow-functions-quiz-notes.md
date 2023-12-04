@@ -37,10 +37,10 @@ After completing this exercise, you should be able to discuss or answer the foll
 
 - In the expression
   `` js
-    bar((y) => {
-      console.log(`4y = ${4 * y}`);
-    });
-     `` - Identify the arrow function - () => {}
+  bar((y) => {
+    console.log(`4y = ${4 * y}`);
+  });
+   `` - Identify the arrow function - () => {}
 
       - How many arguments does the arrow function take?
       - one
@@ -57,6 +57,7 @@ After completing this exercise, you should be able to discuss or answer the foll
       Arrow funtions get executed whenever you call them
 
 - How does the value of `this` differ between standard functions and arrow functions?
+- in a standard function this refers to the window object and in an es6 arrow function the this keyword is referring to the actual targeting element
 
 ## Notes
 
