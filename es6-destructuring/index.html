@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const book1 = {
+        title: 'Goodnight Punpun',
+        author: 'Inio Asano',
+        libraryID: 3353,
+      };
+
+      const book2 = {
+        title: 'Les Fleurs du mal',
+        author: 'Charles Baudelaire',
+        libraryID: 2345,
+      };
+
+      const { title } = book1;
+      const { author } = book1;
+      const { libraryID } = book1;
+
+      const clashed = `The title of the book is ${title}, the author is ${author} and the id card is ${libraryID}`;
+
+      console.log(clashed);
+
+      // Array destructuring
+
+      const library = [
+        {
+          title: 'The Road Ahead',
+          author: 'Bill Gates',
+          libraryID: 1254,
+        },
+        {
+          title: 'Walter Isaacson',
+          author: 'Steve Jobs',
+          libraryID: 4264,
+        },
+        {
+          title: 'Mockingjay: The Final Book of The Hunger Games',
+          author: 'Suzanne Collins',
+          libraryID: 3245,
+        },
+        {
+          title: "Dead Dead Demon's De De De De Destruction",
+          author: 'Inio Asano',
+          libraryID: 1233,
+        },
+      ];
+
+      const obj1 = () => library[0];
+      const obj2 = () => library[1];
+      const obj3 = () => library[2];
+
+      const getArrObj1 = obj1();
+      const getArrObj2 = obj2();
+      const getArrObj3 = obj3();
+
+      console.log(getArrObj1);
+      console.log(getArrObj2);
+      console.log(getArrObj3);
+    </script>
+  </body>
+</html>
