@@ -19,17 +19,12 @@
         libraryID: 2345,
       };
 
-      const objDes = { a: book1.title, b: book1.author, c: book1.libraryID };
+      let { title, author, libraryID } = book1;
 
-      const objDes2 = { d: book2.title, e: book2.author, f: book2.libraryID };
+      let { title: ttl2, author: auth2, libraryID: lId2 } = book2;
 
-      const { a, b, c } = objDes;
-
-      const { d, e, f } = objDes2;
-
-      const clashed = `The title of the book is ${a}, the author is ${b} and the id card is ${c}`;
-
-      const clashed2 = `The title of the book is ${d}, the author is ${e} and the id card is ${f}`;
+      const clashed = `The title of the book is ${title}, the author is ${author} and the id card is ${libraryID}`;
+      const clashed2 = `The title of the book is ${ttl2}, the author is ${auth2} and the id card is ${lId2}`;
 
       console.log(clashed);
       console.log(clashed2);
@@ -59,11 +54,13 @@
         },
       ];
 
-      const [m, n, p] = library;
+      const [m, n] = library;
+
+      const [book6] = library;
 
       console.log('book 1:', m);
       console.log('book 2:', n);
-      console.log('book 3:', p);
+      console.log('book 3:', book6);
     </script>
   </body>
 </html>
