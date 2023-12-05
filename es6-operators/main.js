@@ -20,9 +20,10 @@ const v4 = [3, 5, 7, 9];
 //   console.log(v2)
 // }
 
-v1 && console.log('v1 is truthy')
+v1 && console.log('v1 is truthy');
 
-
+// for v2
+v2 && console.log('v2 is truthy');
 
 /* TODO:
  * Demonstrate how to assign a "default value" to a variable.
@@ -33,18 +34,12 @@ v1 && console.log('v1 is truthy')
  */
 
 // 2nd solution
-// default value
-let config1
-let config2
 
-config1 || console.log(v1)
+const config1 = undefined || console.log(v1);
 
-
-
-
+const config2 = undefined || console.log(v2);
 
 //
-
 
 /* TODO:
  * Demonstrate how to assign a "default value" to a variable only if the variable is `undefined`.
@@ -57,18 +52,9 @@ config1 || console.log(v1)
 
 // 3rd solution
 
-
-const cfg1 = v1 ?? 'default value'
-
-const cfg2 = v2 ?? 'default value'
-
-
-const cfg3 = v3 ?? 'default value'
-
-
-
-
-
+const cfg1 = v1 ?? console.log('default value');
+const cfg2 = v2 ?? console.log('default value');
+const cfg3 = v3 ?? console.log('default value');
 
 /* TODO:
  * Use the shorthand if/else, which is especially useful for variable assignments.
@@ -82,21 +68,14 @@ const cfg3 = v3 ?? 'default value'
 // 4th solution
 
 let tern1;
-let tern2;
 
+v1 ? (tern1 = console.log(true)) : console.log(undefined);
 
- v1 ? tern1 = 'true' : undefined
+!v1 ? (tern1 = console.log(false)) : console.log(undefined);
 
+v2 ? (tern1 = console.log(true)) : console.log(undefined);
 
- !v1 ? tern1 = 'falsy' : undefined
-
-
-
-v2 ? tern1 = 'true' : undefined
-
-
-!v2 ? tern1 = 'falsy' : undefined
-
+!v2 ? (tern1 = console.log(false)) : console.log(undefined);
 
 /* TODO:
  * Use the shorthand for "if defined".
@@ -110,13 +89,9 @@ v2 ? tern1 = 'true' : undefined
 
 // 5th solutiion
 
-
-
-const oc1 = v1?.value
-const oc2 = v1?.value
-const oc3 = v1?.value
-
-
+const oc1 = v1?.value;
+const oc2 = v1?.value;
+const oc3 = v1?.value;
 
 /* TODO:
  * Copy an object and add one property.
@@ -128,11 +103,7 @@ const oc3 = v1?.value
 
 // 6th solution
 
-v1.foo = 'bar'
-
-const sObj = v1
-
-console.log(sObj)
+const sObj = { foo: 'bar', ...v1 };
 
 /* TODO:
  * Copy an array and prepend one element.
@@ -142,11 +113,8 @@ console.log(sObj)
  * Expected: `sArr = [100, 3, 5, 7, 9]`.
  */
 
+const ten = [10];
 
+const sArr = [...ten, ...v4];
 
-const ten = [10]
-
-const sArr = [...ten, ...v4]
-
-
-console.log(sArr)
+console.log(sArr);
