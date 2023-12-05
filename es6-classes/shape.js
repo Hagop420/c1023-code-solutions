@@ -8,11 +8,11 @@ class Shape {
   }
 
   describe() {
-    return `${this.area}`;
+    return `${this.area} and the parameter is ${this.perimeter}`;
   }
 }
 
-const shapesNew = new Shape(30.12, 60.4523);
+const shapesNew = new Shape(30, 60);
 
 console.log(shapesNew.describe());
 
