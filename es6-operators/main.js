@@ -35,9 +35,9 @@ v2 && console.log('v2 is truthy');
 
 // 2nd solution
 
-const config1 = undefined || console.log(v1);
+const config1 = v1 || console.log('default value');
 
-const config2 = undefined || console.log(v2);
+const config2 = v2 || console.log('default value');
 
 //
 
@@ -67,15 +67,8 @@ const cfg3 = v3 ?? console.log('default value');
 
 // 4th solution
 
-let tern1;
-
-v1 ? (tern1 = console.log(true)) : console.log(undefined);
-
-!v1 ? (tern1 = console.log(false)) : console.log(undefined);
-
-v2 ? (tern1 = console.log(true)) : console.log(undefined);
-
-!v2 ? (tern1 = console.log(false)) : console.log(undefined);
+const tern1 = v1 ? 'truthy' : 'falsy';
+const tern2 = v2 ? 'truthy' : 'falsy';
 
 /* TODO:
  * Use the shorthand for "if defined".
@@ -113,8 +106,8 @@ const sObj = { foo: 'bar', ...v1 };
  * Expected: `sArr = [100, 3, 5, 7, 9]`.
  */
 
-const ten = [10];
+const ten = 10;
 
-const sArr = [...ten, ...v4];
+const sArr = [ten, ...v4];
 
 console.log(sArr);
