@@ -1,0 +1,28 @@
+*{margin:0;padding:0;box-sizing: border-box;}
+body{
+  background:lightskyblue
+}
+
+
+main#carousel-flexbox{
+  display:flex;
+  justify-content: center;
+  margin:30px 10px;
+}
+main#carousel-flexbox img{
+  height:32vh;
+  border-radius:.3rem
+}
+
+
+/* Carousel next and prevous arrows changed */
+
+.carousel-control-next-icon{
+background-image:url('./images/chevron_268053.png') !important
+}
+
+.carousel-control-prev-icon{
+background-image:url('./images/chevron_268056.png') !important
+}
+
+.carousel-indicators button{width:10.3px !important;height:10.3px !important;background-color:lightskyblue !important}
