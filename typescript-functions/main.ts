@@ -21,6 +21,7 @@ function getArea(width: number, height: number): number {
 console.log(getArea(10993262343528714, 3882836));
 
 // 4TH FUNCTIOn
+// git
 
 function getFirtName(names: any): any {
   return names.firstName;
