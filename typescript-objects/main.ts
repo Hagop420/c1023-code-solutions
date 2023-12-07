@@ -5,7 +5,7 @@ type StudentProps = {
   livesInIrvine?: boolean;
   previousOccupation?: string;
 };
-
+// for git purposes
 const student: StudentProps = {
   firstName: 'Jack',
   lastName: 'Almadjian',
