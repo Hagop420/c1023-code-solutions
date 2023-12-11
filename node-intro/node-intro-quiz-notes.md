@@ -5,16 +5,27 @@
 After completing this exercise, you should be able to discuss or answer the following questions:
 
 - What are the 3 components of a fullstack Web architecture?
+  -front end
+  -back end
+  -database
 
 - What is Node.js?
+  -back end purposes on the JS
 
 - What can Node.js be used for?
 
 - What is a REPL?
+  -redevelop
+  -execute
+  -print
+  -loop
 
 - When was Node.js created?
 
+- Ryan Dahl in 2009,
+
 - What backend languages have you heard of?
+  -SQL , C++ PHP , Phython , Java
 
 ## Notes
 
