@@ -5,5 +5,5 @@ takeAChance('Jack')
     console.log(msg);
   })
   .catch((err) => {
-    console.log(err);
+    console.log(`hello sir , ${err.message}`);
   });
