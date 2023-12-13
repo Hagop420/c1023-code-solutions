@@ -53,5 +53,5 @@ try {
   throwSeveral();
   throwChained();
 } catch (msgError: any) {
-  console.log(elapsed(), 'foo1:', msgError.message);
+  console.log(elapsed(), 'foo1:', msgError);
 }
