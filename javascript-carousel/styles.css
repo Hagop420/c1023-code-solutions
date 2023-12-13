@@ -1,0 +1,10 @@
+#carousel{
+  display: flex;
+  justify-content: center;
+  align-items:center
+}
+
+
+/* hiding the image's */
+
+.hidden{}

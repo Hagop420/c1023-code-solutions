@@ -1,0 +1,65 @@
+#carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: lightgreen;
+  border: yellow 2px solid;
+  border-radius: 0.4rem;
+  padding: 30px;
+
+  /* max-width: 85%; */
+  margin: 17vh 50px;
+}
+
+/* hiding all the image's except the first one */
+.hidden {
+  display: none;
+}
+
+.carousel-image {
+  width: 80%;
+  height: 550px;
+  object-fit: contain;
+  object-position: center;
+}
+
+img {
+  padding-left: 80px;
+}
+
+/* gap the fa solid dots */
+.carousel-button-controls i {
+  margin: 1px;
+  font-size: 20px;
+}
+
+.button-toggler-controls {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+/* .button-toggler-controls i{
+  color: darkorange;
+} */
+
+.button-toggler-controls i.btnDefault {
+  color: #000;
+}
+
+.OR,
+.btnDefault {
+  color: yellow;
+}
+
+.fa-chevron-left,
+.button-toggler-controls,
+.fa-chevron-right {
+  cursor: pointer;
+  transition: 0.4s all ease-in-out;
+}
+
+.fa-chevron-left:hover,
+.fa-chevron-right:hover {
+  transform: scale(1.9);
+}
