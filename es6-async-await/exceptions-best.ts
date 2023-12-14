@@ -49,9 +49,9 @@ throwChained();
 // )
 
 try {
-  throwOnce();
-  throwSeveral();
-  throwChained();
+  await throwOnce();
+  await throwSeveral();
+  await throwChained();
 } catch (msgError) {
   console.log(msgError);
 }
