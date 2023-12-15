@@ -5,8 +5,10 @@
 After completing this exercise, you should be able to discuss or answer the following questions:
 
 - What is an API endpoint?
+- endpoint is the URL that the api http request is sent to which gives you/brings back the status code: can be 404 , 403 etc.
 
 - What is the appropriate `Content-Type` header for HTTP messages that contain JSON in their bodies?
+- The appropriate content type of an object would be application/json.
 
 ## Notes
 
