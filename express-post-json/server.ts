@@ -50,21 +50,26 @@ exp.use(express.json());
 
 exp.post('/api/grades', (req, res) => {
   // error handling
+  const bod = req.body;
 
-  if (!req.body || !req.body.name || !req.body.course || !req.body.score) {
+  if (!bod || !bod.name || !bod.course || !bod.score) {
     return res.status(400).send('Fill in all fields');
   }
 
-  const bod = req.body;
   const idGetter = nextId;
-  grades[nextId] = bod;
-  bod.id = nextId;
   nextId += 1;
+
+  grades[idGetter] = {
+    id: idGetter,
+    name: bod.name,
+    course: bod.course,
+    score: bod.score,
+  };
   const keysAndVals = grades[idGetter];
   res.json(keysAndVals);
 });
 
-exp.get('api/grades/:id', (req, res) => {
+exp.get('/api/grades/:id', (req, res) => {
   const id = +req.params.id;
   const grade = grades[id];
   res.json(grade);
@@ -73,5 +78,5 @@ exp.get('api/grades/:id', (req, res) => {
 // listening for the method/API CALL
 
 exp.listen(8080, () => {
-  console.log(`Express working on port 8080`);
+  console.log(`Please API gimme back a 200 status of passed(ok)`);
 });
