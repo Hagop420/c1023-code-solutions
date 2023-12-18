@@ -30,6 +30,13 @@ async function filePulledContents(): Promise<Data> {
   return JSON.parse(objectDataJSONFilePulled);
 }
 
+
+// writeFile method
+
+async function writeFilePulledContents(data: Data): Promise<void> {
+  await writeFile('data.json', JSON.stringify(data, null, 2), 'utf8');
+}
+
 // user is able to create a new object entry by using/utilizing a POST request
 app.post('/api/notes', async (req, res) => {
   // utilizing/calling the dataOBJJSON function which call's/reads the data.json file
@@ -53,6 +60,7 @@ app.post('/api/notes', async (req, res) => {
   };
 
   const keysAndVals = dataObjJSONfile.notes[idGetter];
+
   res.json(keysAndVals);
 });
 // end/ending the POST request
@@ -67,6 +75,7 @@ app.get('/api/notes', async (req, res) => {
   // utilizing/calling the dataOBJJSON function which call's/reads the data.json file
   const dataObjJSONfile = await filePulledContents();
   res.json(dataObjJSONfile)
+
 });
 
 // ending of GET for specific ID'S
