@@ -39,29 +39,40 @@ async function writeFilePulledContents(data: Data): Promise<void> {
 
 // user is able to create a new object entry by using/utilizing a POST request
 app.post('/api/notes', async (req, res) => {
-  // utilizing/calling the dataOBJJSON function which call's/reads the data.json file
-  const dataObjJSONfile = await filePulledContents();
+  try {
+    // utilizing/calling the dataOBJJSON function which call's/reads the data.json file
+    const dataObjJSONfile = await filePulledContents();
 
-  // error handling
-  const bod = req.body;
+    // error handling
+    const bod = req.body;
+    const bodyContent = req.body.content;
 
-  if (!bod || !bod.content || !bod.notes) {
-    return res.status(400).send('Fill in all fields');
+    const content: string = req.body.content;
+    if (!content) {
+      res.status(400).json({ error: 'Hey dummy, send some content!' });
+      return;
+    }
+
+    const idGetter = nextId;
+
+
+
+
+    dataObjJSONfile.notes[idGetter] = {
+      id: idGetter,
+      content: bod.content,
+    };
+
+    const keysAndVals = dataObjJSONfile.notes[idGetter];
+    const note = { id: dataObjJSONfile.nextId, content }
+    // res.json(keysAndVals);
+    nextId += 1;
+    await writeFilePulledContents(dataObjJSONfile)
+    res.status(201).json(note)
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Unexpected error' });
   }
-
-  const idGetter = nextId;
-  nextId += 1;
-
-
-
-  dataObjJSONfile.notes[idGetter] = {
-    id: idGetter,
-    content: bod.content,
-  };
-
-  const keysAndVals = dataObjJSONfile.notes[idGetter];
-
-  res.json(keysAndVals);
 });
 // end/ending the POST request
 
@@ -73,9 +84,16 @@ app.post('/api/notes', async (req, res) => {
 app.get('/api/notes', async (req, res) => {
   // ID pulling functionallity
   // utilizing/calling the dataOBJJSON function which call's/reads the data.json file
-  const dataObjJSONfile = await filePulledContents();
-  res.json(dataObjJSONfile)
+  // const dataObjJSONfile = await filePulledContents();
+  // res.json(dataObjJSONfile)
+  try {
+    const dataObjJSONfile = await filePulledContents();
+    res.json(dataObjJSONfile)
 
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Unexpected error' });
+  }
 });
 
 // ending of GET for specific ID'S
@@ -85,14 +103,72 @@ app.get('/api/notes', async (req, res) => {
 app.get('/api/notes/:id', async (req, res) => {
   // ID pulling functionallity
   // utilizing/calling the dataOBJJSON function which call's/reads the data.json file
-  const dataObjJSONfile = await filePulledContents();
-  const idGetter = +req.params.id;
-  const noted = dataObjJSONfile.notes[idGetter];
+  try {
+    const dataObjJSONfile = await filePulledContents();
+    const idGetter = +req.params.id;
+    const noted = dataObjJSONfile.notes[idGetter];
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Unexpected error' });
+  }
   // convert note ID obj to json format
   // res.json(noted)
 });
 
 // ending of GET for specific ID'S
+
+
+
+
+
+// PUT METHOD
+
+
+app.put('/api/notes/:id', async (req, res) => {
+  try {
+    const content: string = req.body.content;
+    if (!content) {
+      res.status(400).json({ error: 'Hey dummy, send some content!' });
+      return;
+    }
+    const fileCall = await filePulledContents()
+    const id = +req.params.id;
+    if (!(id in fileCall.notes)) {
+      res.status(404).json({ error: `${id} not found` });
+      return;
+    }
+    fileCall.notes[id].content = content;
+    await writeFilePulledContents(fileCall);
+    res.status(201).json(fileCall.notes[id]);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Unexpected error' });
+  }
+
+})
+
+
+
+
+// delete note
+
+
+app.delete('/api/notes/:id', async (req, res) => {
+  try {
+    const fileCalled = await filePulledContents();
+    const id = +req.params.id;
+    if (!(id in fileCalled.notes)) {
+      res.status(404).json({ error: `${id} not found` });
+      return;
+    }
+    delete fileCalled.notes[id];
+    await writeFilePulledContents(fileCalled);
+    res.sendStatus(204);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Unexpected error' });
+  }
+});
 
 // Invoking/calling the LISTEN METHOD
 
