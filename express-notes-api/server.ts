@@ -1,16 +1,19 @@
 // imports
 import express from 'express';
-import { readFile } from 'node:fs/promises';
+import { readFile, writeFile } from 'node:fs/promises';
 
 // Calling/Invoking the express method/Function
 const app = express();
 
 // calling the object calls for the data json file
+type Note = {
+  id: number;
+  content: string;
+};
+
 type Data = {
   nextId: number;
-  // notes: Record<number>;
-  notes: Record<number, { nextId: number; notes: string; content: string }>;
-  content: string;
+  notes: Record<number, Note>;
 };
 
 // ID number going to be incremented
@@ -27,8 +30,7 @@ async function filePulledContents(): Promise<Data> {
   return JSON.parse(objectDataJSONFilePulled);
 }
 
-// calling the individual ID'S by using/utilizing the POST request
-
+// user is able to create a new object entry by using/utilizing a POST request
 app.post('/api/notes', async (req, res) => {
   // utilizing/calling the dataOBJJSON function which call's/reads the data.json file
   const dataObjJSONfile = await filePulledContents();
@@ -43,19 +45,33 @@ app.post('/api/notes', async (req, res) => {
   const idGetter = nextId;
   nextId += 1;
 
+
+
   dataObjJSONfile.notes[idGetter] = {
-    nextId: idGetter,
-    notes: bod.notes,
+    id: idGetter,
     content: bod.content,
   };
 
   const keysAndVals = dataObjJSONfile.notes[idGetter];
   res.json(keysAndVals);
 });
-
 // end/ending the POST request
 
-// GET request/ :: /api/notes
+
+
+
+// GET request/ gets/returns the entire objects
+
+app.get('/api/notes', async (req, res) => {
+  // ID pulling functionallity
+  // utilizing/calling the dataOBJJSON function which call's/reads the data.json file
+  const dataObjJSONfile = await filePulledContents();
+  res.json(dataObjJSONfile)
+});
+
+// ending of GET for specific ID'S
+
+// GET request/ gets the objects with a given id
 
 app.get('/api/notes/:id', async (req, res) => {
   // ID pulling functionallity
@@ -63,16 +79,11 @@ app.get('/api/notes/:id', async (req, res) => {
   const dataObjJSONfile = await filePulledContents();
   const idGetter = +req.params.id;
   const noted = dataObjJSONfile.notes[idGetter];
-
-  if (noted) {
-    res.status(200).json(noted);
-    return; // Return here to prevent the next line from executing
-  }
-
+  // convert note ID obj to json format
   // res.json(noted)
-
-  res.status(200).json(dataObjJSONfile);
 });
+
+// ending of GET for specific ID'S
 
 // Invoking/calling the LISTEN METHOD
 
