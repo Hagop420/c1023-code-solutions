@@ -30,7 +30,6 @@ async function filePulledContents(): Promise<Data> {
   return JSON.parse(objectDataJSONFilePulled);
 }
 
-
 // writeFile method
 
 async function writeFilePulledContents(data: Data): Promise<void> {
@@ -45,7 +44,6 @@ app.post('/api/notes', async (req, res) => {
 
     // error handling
     const bod = req.body;
-    const bodyContent = req.body.content;
 
     const content: string = req.body.content;
     if (!content) {
@@ -55,29 +53,22 @@ app.post('/api/notes', async (req, res) => {
 
     const idGetter = nextId;
 
-
-
-
     dataObjJSONfile.notes[idGetter] = {
       id: idGetter,
       content: bod.content,
     };
 
-    const keysAndVals = dataObjJSONfile.notes[idGetter];
-    const note = { id: dataObjJSONfile.nextId, content }
-    // res.json(keysAndVals);
+    const note = { id: dataObjJSONfile.nextId, content };
+    dataObjJSONfile.notes[dataObjJSONfile.nextId] = note;
     nextId += 1;
-    await writeFilePulledContents(dataObjJSONfile)
-    res.status(201).json(note)
+    await writeFilePulledContents(dataObjJSONfile);
+    res.status(201).json(note);
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: 'Unexpected error' });
   }
 });
 // end/ending the POST request
-
-
-
 
 // GET request/ gets/returns the entire objects
 
@@ -88,8 +79,7 @@ app.get('/api/notes', async (req, res) => {
   // res.json(dataObjJSONfile)
   try {
     const dataObjJSONfile = await filePulledContents();
-    res.json(dataObjJSONfile)
-
+    res.json(dataObjJSONfile);
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: 'Unexpected error' });
@@ -106,7 +96,11 @@ app.get('/api/notes/:id', async (req, res) => {
   try {
     const dataObjJSONfile = await filePulledContents();
     const idGetter = +req.params.id;
-    const noted = dataObjJSONfile.notes[idGetter];
+    if (!(idGetter in dataObjJSONfile.notes)) {
+      res.status(404).json({ error: `${idGetter} not found` });
+      return;
+    }
+    res.json(dataObjJSONfile.notes[idGetter]);
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: 'Unexpected error' });
@@ -117,12 +111,7 @@ app.get('/api/notes/:id', async (req, res) => {
 
 // ending of GET for specific ID'S
 
-
-
-
-
 // PUT METHOD
-
 
 app.put('/api/notes/:id', async (req, res) => {
   try {
@@ -131,7 +120,7 @@ app.put('/api/notes/:id', async (req, res) => {
       res.status(400).json({ error: 'Hey dummy, send some content!' });
       return;
     }
-    const fileCall = await filePulledContents()
+    const fileCall = await filePulledContents();
     const id = +req.params.id;
     if (!(id in fileCall.notes)) {
       res.status(404).json({ error: `${id} not found` });
@@ -144,14 +133,9 @@ app.put('/api/notes/:id', async (req, res) => {
     console.error(err);
     res.status(500).json({ error: 'Unexpected error' });
   }
-
-})
-
-
-
+});
 
 // delete note
-
 
 app.delete('/api/notes/:id', async (req, res) => {
   try {
@@ -169,7 +153,7 @@ app.delete('/api/notes/:id', async (req, res) => {
     res.status(500).json({ error: 'Unexpected error' });
   }
 });
-
+// comment for git purposes
 // Invoking/calling the LISTEN METHOD
 
 app.listen(8080, () => {
