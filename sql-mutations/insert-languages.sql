@@ -1,5 +1,7 @@
 INSERT INTO "languages" ("name")
 VALUES ('HTML'),
        ('CSS'),
-       ('JavaScript')
+       ('JavaScript'),
+       ('ARMENIAN'),
+       ('TURKISH')
 RETURNING *;

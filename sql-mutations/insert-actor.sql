@@ -1,3 +1,3 @@
-insert into "actors" ("firstName" , "lastName" )
-values ('Tobin' , 'Bell')
-returning *
+INSERT INTO "actors" ("firstName" , "lastName" )
+VALUES ('Tobin' , 'Bell')
+RETURNING *
