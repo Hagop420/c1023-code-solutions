@@ -1,7 +1,3 @@
-// imports
-
-import React from 'react';
-
 export const CustomButton = ({ text, backgroundClr, clrTxt }) => {
   function clickFunctionPopUp() {
     alert('Button Clicked');
