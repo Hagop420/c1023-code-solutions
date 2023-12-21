@@ -76,7 +76,7 @@ app.get('/api/grades', async (_, res, next) => {
 
     const queryState = await db.query(sql);
 
-    const queryResult = queryState.rows;
+    const queryResult = queryState.rows[0];
 
     res.json(queryResult);
   } catch (err) {
@@ -92,18 +92,34 @@ app.get('/api/grades', async (_, res, next) => {
 app.post('/api/grades', async (req, res, next) => {
   try {
     // SQL query to get all rows from the grades table
+    const { name, course, score } = req.body;
+
+    if (!name) {
+      throw new ClientError(400, 'no name');
+    }
+    if (!course) {
+      throw new ClientError(400, 'no course');
+    }
+    if (!score) {
+      throw new ClientError(400, 'no score');
+    }
+
     const sql = `
-    INSERT INTO "grades" ("name" , "course" , "score" )
-      VALUES ('Tobin Bell' , 'Killing' , '200')
-      RETURNING *
+    UPDATE "grade"
+      set name = $4
+          course = $2
+          score = $3
+          where "gradeId" = $1
+          returning *
     `;
+
     // const gradesInfo = sql
 
     // query by using the pool clause
 
     const queryState = await db.query(sql);
 
-    const queryResult = queryState.rows;
+    const queryResult = queryState.rows[0];
 
     res.json(queryResult);
   } catch (err) {
@@ -174,7 +190,12 @@ app.delete('/api/grades:gradeId', async (req, res, next) => {
 
     const paramsRower = [gradeId];
     const resres = await db.query(sql, paramsRower);
-
+    const grade = resres.rows[0];
+    if (!grade) {
+      // We could not have known ahead of time without actually querying the db,
+      // but the specific grade being requested was not found in the database.
+      throw new ClientError(404, `Cannot find grade with "gradeId" ${gradeId}`);
+    }
     res.json(resres);
   } catch (err) {
     // The query failed for some reason
