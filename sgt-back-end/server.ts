@@ -105,13 +105,8 @@ app.post('/api/grades', async (req, res, next) => {
     }
 
     const sql = `
-    UPDATE "grade"
-      set name = $4
-          course = $2
-          score = $3
-          where "gradeId" = $1
-          returning *
-    `;
+    INSERT INTO "grades" ("name" , "course" , "score" )
+      VALUES ($1 ,$2 ,$3)`;
 
     // const gradesInfo = sql
 
