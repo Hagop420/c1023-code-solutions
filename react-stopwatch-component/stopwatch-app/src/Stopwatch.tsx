@@ -17,23 +17,28 @@ export const StopwatchTsx = () => {
   const [isPlaying, setIsPlaying] = useState(false);
 
   // main functionallity
-  let intervalId;
+  // let intervalId;
 
-  const togglePlayPause = () => {
+  let intId; // Use useRef to keep a reference to the interval
+
+  function togglePlayPause() {
+    console.log('timer function called');
     setIsPlaying((prevState) => {
       if (!prevState) {
         // If it's paused, start the timer from 0
-        isCounting(0);
-        intervalId = setInterval(() => {
+        console.log('Starting timer');
+        isCounting(0); // Reset the counter to 0
+        intId = setInterval(() => {
           isCounting((prevCount) => prevCount + 1);
         }, 1000);
       } else {
-        // If it's playing, clear the timer
-        clearInterval(intervalId);
+        // If it's playing, clear the timer and reset the counter to 0
+        clearInterval(intId); // Clear the interval
+        isCounting(0); // Reset the counter to 0
       }
-      return !prevState;
+      return !prevState; // Toggle the state
     });
-  };
+  }
 
   // css
 
