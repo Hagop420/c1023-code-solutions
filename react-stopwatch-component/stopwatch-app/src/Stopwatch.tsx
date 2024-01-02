@@ -21,6 +21,21 @@ export const StopwatchTsx = () => {
   // main functionallity
   // let intervalId;
 
+  // random color's function
+
+  function getRandomColor() {
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+    return `rgb(${r}, ${g}, ${b})`;
+  }
+  function getRandomColorForTheNum() {
+    const r = Math.floor(Math.random() * 155);
+    const g = Math.floor(Math.random() * 185);
+    const b = Math.floor(Math.random() * 129);
+    return `rgb(${r}, ${g}, ${b})`;
+  }
+
   function togglePlayPause() {
     console.log('timer function called');
     if (isPlaying) {
@@ -48,9 +63,9 @@ export const StopwatchTsx = () => {
   const circleStyling = {
     borderRadius: '50%',
     height: '50px',
-    background: 'white',
-    border: 'yellow solid 5px',
-    color: 'black',
+    background: getRandomColor(),
+    border: `${getRandomColor()} solid 5px`,
+    color: getRandomColorForTheNum(),
     padding: '300px 310px',
   };
 
