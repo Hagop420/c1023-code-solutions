@@ -16,26 +16,29 @@ export const StopwatchTsx = () => {
   // play , pause btn's
   const [isPlaying, setIsPlaying] = useState(false);
 
+  const [intId, isCounted] = useState<NodeJS.Timeout>();
+
   // main functionallity
   // let intervalId;
 
-  let intId; // Use useRef to keep a reference to the interval
-
   function togglePlayPause() {
     console.log('timer function called');
-    setIsPlaying((prevState) => {
-      if (!prevState) {
-        // If it's paused, start the timer from 0
-        console.log('Starting timer');
-        isCounting(0); // Reset the counter to 0
-        intId = setInterval(() => {
+    if (isPlaying) {
+      // If it's playing, clear the timer and reset the counter to 0
+      clearInterval(intId); // Clear the interval
+      isCounting(0); // Reset the counter to 0
+      console.log('stopping the timer', intId);
+    } else {
+      // If it's paused, start the timer from 0
+      console.log('Starting timer');
+      isCounting(0); // Reset the counter to 0
+      isCounted(
+        setInterval(() => {
           isCounting((prevCount) => prevCount + 1);
-        }, 1000);
-      } else {
-        // If it's playing, clear the timer and reset the counter to 0
-        clearInterval(intId); // Clear the interval
-        isCounting(0); // Reset the counter to 0
-      }
+        }, 1000)
+      );
+    }
+    setIsPlaying((prevState) => {
       return !prevState; // Toggle the state
     });
   }
