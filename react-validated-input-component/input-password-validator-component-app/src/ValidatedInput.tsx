@@ -18,14 +18,19 @@ export function ValidatedInput() {
   const toggleTyping = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPassword(e.target.value);
 
-    if (password.length < 5 || password.length > 8) {
+    const renderCurrPassword = e.target.value;
+
+    if (renderCurrPassword.length < 8) {
       isValidated('Your Password is to short.');
       isIncorrect(true);
-    } else if (password.length === 0) {
-      isValidated('Password is required');
     } else {
       isValidated('Strong Password.');
       isIncorrect(false);
+    }
+
+    // reset password to 0 if the length of the pass is 0
+    if (renderCurrPassword.length === 0) {
+      isValidated('Password is required.');
     }
   };
 
