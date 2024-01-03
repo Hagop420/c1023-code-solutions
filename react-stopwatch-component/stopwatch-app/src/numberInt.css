@@ -1,0 +1,7 @@
+.numb {
+  font-size: 40px;
+  position: 'relative';
+  bottom: 55px;
+  display: 'flex';
+  align-items: 'center';
+}
