@@ -1,109 +1,115 @@
 // FILE IMPORT'S
-import { useState } from "react";
-import './banners.css'
+import { useState } from 'react';
+import './banners.css';
 
 // prop for RoatingBanner
 type Props = {
-  items: string[]
-}
-
+  items: string[];
+};
 
 export function RotatingBanner({ items }: Props) {
-
   // state for the number's
-  const [currNumber, setNumber] = useState(0)
+  const [currNumber, setCurrNumber] = useState(0);
 
+  function handlerPrevFunc(): void {
+    // 3 - 1 + items.lenegth(6) % 6 = 2
+    const prevIndex = (currNumber - 1 + items.length) % items.length;
+    setCurrNumber(prevIndex);
+  }
 
-  function handlerPrevFunc() {
+  function handlerNextFunc(): void {
+    // 3 - 1 + items.lenegth(6) % 6 = 2
+    const nextIndex = (currNumber + 1) % items.length;
+    setCurrNumber(nextIndex);
+  }
 
+  function handleBtn(index: number): void {
+    // 2 things figure out what index we r clicking on
+    // once we know the index we do setCurrentNumber
+    setCurrNumber(index);
   }
 
   return (
-
-
     <>
       <Banner item={items[currNumber]} />
 
+      <BannerPrevBtn click={handlerPrevFunc} />
 
-      <BannerPrevBtn />
+      <BannerNumsFlexerItems click={handleBtn} currNumber={currNumber} />
 
-      <BannerNumsFlexerItems currNumber={currNumber} />
-
-      <NextBtn />
-
+      <NextBtn click={handlerNextFunc} />
     </>
-  )
+  );
 }
 
 type BannerProps = {
-  item: string
-}
+  item: string;
+};
 
 export function Banner({ item }: BannerProps) {
-  return (
-    <h1 className="m-5">{item}</h1>
-  )
+  return <h1 className="m-5">{item}</h1>;
 }
-
 
 // COMPONENT 2
+type PropsNumberHere = {
+  click: () => void;
+};
 
-export function BannerPrevBtn() {
+export function BannerPrevBtn({ click }: PropsNumberHere) {
   return (
-    <div className="font-bold m-10 cursor-pointer bg-orange-400	w-20 m-auto text-center rounded hover:bg-yellow-custom transition bg-yellow duration-100 text-black hover:text-black p-2">⬅Prev</div>
-  )
+    <button
+      onClick={click}
+      className="font-bold m-10 cursor-pointer bg-orange-400	w-20 m-auto text-center rounded hover:bg-yellow-custom transition bg-yellow duration-100 text-black hover:text-black p-2">
+      ⬅Prev
+    </button>
+  );
 }
-
 
 // COMPONENT 3 PARENT
 
 type PropNumber = {
-  currNumber: number
-}
-export function BannerNumsFlexerItems({ currNumber }: PropNumber) {
-  // return (
-  //   <div className="m-auto flex justify-center">
-  //     <span className="m-10 bg-gray-300 text-black p-8 cursor-pointer hover: hover:0 transition duration-300 rounded-md shadow-yellow">0</span>
-  //     <span className="m-10 bg-gray-950 text-white p-8 cursor-pointer hover: hover:bg-gray-300 transition duration-300 text-black hover:text-black rounded-md"
-  //     >1</span>
-  //     <span className="m-10 bg-gray-950 text-white p-8 cursor-pointer hover: hover:bg-gray-300 transition duration-300 text-black hover:text-black rounded-md">2</span>
-  //     <span className="m-10 bg-gray-950 text-white p-8 cursor-pointer hover: hover:bg-gray-300 transition duration-300 text-black hover:text-black rounded-md">3</span>
-  //     <span className="m-10 bg-gray-950 text-white p-8 cursor-pointer hover: hover:bg-gray-300 transition duration-300 text-black hover:text-black rounded-md">4</span>
-  //     <span className="m-10 bg-gray-950 text-white p-8 cursor-pointer hover: hover:bg-gray-300 transition duration-300 text-black hover:text-black rounded-md">5</span>
-  //   </div>
-  // )
-
-  // looping
-
-
-  const btns = []
+  currNumber: number;
+  click: (index: number) => void;
+};
+export function BannerNumsFlexerItems({ currNumber, click }: PropNumber) {
+  const btns = [];
   for (let i = 0; i < 6; i += 1) {
     if (currNumber === i) {
       btns.push(
-        <span className="m-10 bg-gray-300 text-black p-8 cursor-pointer hover: hover:0 transition duration-300 rounded-md shadow-yellow">{i}</span>
-
-      )
+        // <button onClick={() => click(currNumber)} key={i} className="m-10 bg-gray-300 text-black p-8 cursor-pointer hover: hover:0 transition duration-300 rounded-md shadow-yellow">{i}</button>
+        <button
+          onClick={() => click(Number(i))}
+          key={i}
+          className="m-10 bg-gray-300 text-black p-8 cursor-pointer hover: hover:0 transition duration-300 rounded-md shadow-yellow">
+          {i}
+        </button>
+      );
     } else {
       btns.push(
-        <span className="m-10 bg-gray-950 text-white p-8 cursor-pointer hover: hover:bg-gray-300 transition duration-300 text-black hover:text-black rounded-md">{i}</span>
-
-      )
+        <button
+          onClick={() => click(Number(i))}
+          key={i}
+          className="m-10 bg-gray-950 text-white p-8 cursor-pointer hover: hover:bg-gray-300 transition duration-300 text-black hover:text-black rounded-md">
+          {i}
+        </button>
+      );
     }
-
   }
 
-  return (
-    <div className="m-auto flex justify-center">{btns}</div>
-  )
-
-
+  return <div className="m-auto flex justify-center">{btns}</div>;
 }
 
-
 // COMPONENT 4
+type Nextbutton = {
+  click: () => void;
+};
 
-export function NextBtn() {
+export function NextBtn({ click }: Nextbutton) {
   return (
-    <div className="font-bold m-10 cursor-pointer bg-orange-400	w-20 m-auto text-center rounded hover:bg-yellow-custom transition bg-yellow duration-100 text-black hover:text-black p-2">Next⮕</div>
-  )
+    <button
+      onClick={click}
+      className="font-bold m-10 cursor-pointer bg-orange-400	w-20 m-auto text-center rounded hover:bg-yellow-custom transition bg-yellow duration-100 text-black hover:text-black p-2">
+      Next⮕
+    </button>
+  );
 }
