@@ -65,6 +65,7 @@ export function SearchableQuotesArr({ quotes }: PropsArr) {
           {q}
         </li>
       ))}
+      {quotes.length === 0 && <p>No Matches!!</p>}
     </ul>
   );
 }
