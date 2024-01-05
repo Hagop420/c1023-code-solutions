@@ -1,0 +1,11 @@
+.first-class {
+  color: goldenrod;
+}
+.diffent-class {
+  color: indigo;
+}
+.other-class {
+  color: chartreuse;
+}
+
+/* last one overwrites if its on the same tag with multiple elements */
