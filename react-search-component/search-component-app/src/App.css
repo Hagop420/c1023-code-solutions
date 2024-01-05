@@ -1,0 +1,47 @@
+#root {
+  max-width: 1280px;
+  margin: 0;
+  padding: 2rem;
+  text-align: center;
+}
+
+body {
+  background: grey;
+}
+
+/* INPUT IS ON TOP OF THE PAGE DISPLAY */
+.inputTop {
+  margin: 0 !important;
+
+  /* position: relative;
+  bottom: 250px; */
+  border-radius: 0.3rem;
+  border: 0;
+  outline-color: red;
+  padding: 5px;
+  background: black;
+  color: yellow !important;
+}
+
+input:hover {
+  background: black;
+}
+
+.inputTop::placeholder {
+  color: yellow;
+  position: relative;
+  left: 5px;
+}
+
+/* mag glass */
+
+.search {
+  padding-left: 20px;
+  background: url('./search-solid.svg') no-repeat 5px;
+  background-size: 16px;
+  margin: 10px;
+}
+
+ul {
+  margin: 10px;
+}
