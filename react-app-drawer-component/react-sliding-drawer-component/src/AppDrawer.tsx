@@ -17,8 +17,13 @@ type TitleProps = {
 export function AppDrawer({ titles, onSelect }: TitleProps) {
   // state for the list display ul item's
   const [currDrawwerOpened, setcurrDrawerOpened] = useState(false)
+  const [title, setTitle] = useState('')
 
+  // function showGame() {
+  //   if () {
 
+  //   }
+  // }
   return (
     <>
       <div>
@@ -60,15 +65,17 @@ function Svgimgcomp() {
 // prop's
 type MappingProp = {
   items: string[]
-  clickedLiItem: (index: string) => void
+  clickedLiItem: (index: string) => void;
+  titles: string;
 }
 
-function DrawerOpened({ items, clickedLiItem }: MappingProp) {
+function DrawerOpened({ items, clickedLiItem, titles }: MappingProp) {
   return (
-    <div className="menu-drawer is-open">
+    <div className="menu-drawer is-open animation-right">
+      <h2 className="menu-heading">{titles}</h2>
       <ul className="unstyle menu-items">
         {items.map((ttlEach) => (
-          <li className="menu-item" onClick={() => clickedLiItem(ttlEach)} key={ttlEach}>{ttlEach}</li>
+          <li className="menu-item" key={ttlEach}>{ttlEach}</li>
         ))}
 
       </ul>

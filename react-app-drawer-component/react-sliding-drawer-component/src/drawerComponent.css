@@ -136,3 +136,17 @@ svg:not(:host).svg-inline--fa {
 li {
   color: #000
 }
+
+@keyframes slideinfromright {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.animation-right {
+  animation: .5s ease-in slideinfromright;
+}
