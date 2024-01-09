@@ -1,0 +1,152 @@
+body {
+  background-color: #000
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.menu-icon {
+  margin: 0.5rem;
+  font-size: 2rem;
+}
+
+.menu-drawer {
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 310px;
+  min-height: 100vh;
+  border-right: #000 solid .1px;
+  border-width: 8px;
+  padding-top: 1rem;
+  background-color: #fff;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.45);
+  transition: transform 0.2s ease-in-out;
+}
+
+/* burger menu icon */
+svg:not(:root).svg-inline--fa,
+svg:not(:host).svg-inline--fa {
+  color: #fff;
+}
+
+.menu-drawer.is-open {
+  transform: translateX(0);
+}
+
+.menu-heading {
+  margin: 1.5rem 0;
+}
+
+.menu-items {
+  padding: 25px;
+}
+
+.menu-item {
+  /* padding-top: 0.75rem;
+  padding-bottom: 0.75rem; */
+  padding: 15px;
+  list-style-type: none;
+  background-color: rgb(255, 255, 255);
+  transition: background-color 0.25s ease-in-out;
+}
+
+.menu-shade {
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: darkcyan;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease-in-out;
+}
+
+.menu-shade.is-drawn {
+  opacity: 0.5;
+  pointer-events: all;
+}
+
+.menu-icon,
+.menu-item {
+  cursor: pointer;
+}
+
+.menu-heading,
+.menu-item {
+  padding-left: 1rem;
+}
+
+.menu-drawer,
+.menu-shade {
+  position: absolute;
+}
+
+.menu-item:hover {
+  background-color: rgb(230, 230, 230);
+}
+
+
+.fa-bars {
+  height: 40px;
+  display: flex;
+  justify-content: flex-start;
+  position: absolute;
+  top: 20px;
+  left: 5vh;
+  padding: 5px;
+  margin: 0 !important;
+  bottom: 170px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 0 !important;
+}
+
+.fa-bars:hover {
+  opacity: .6;
+  transition: all .5s ease-in-out;
+  color: yellow;
+}
+
+.autoed_img {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center !important;
+  align-items: center;
+  flex-direction: column;
+  height: 20vh;
+}
+
+.unstyle {
+  position: absolute;
+  top: 100px;
+  line-height: 1.4rem;
+  left: 1vh;
+  list-style: none;
+  text-align: left;
+
+  color: #fff
+}
+
+.behind {
+  z-index: 12;
+
+}
+
+li {
+  color: #000
+}
+
+@keyframes slideinfromright {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.animation-right {
+  animation: .5s ease-in slideinfromright;
+}
