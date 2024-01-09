@@ -11,16 +11,19 @@ export function List() {
     async function effecting() {
       try {
         const settlingLisMapThrough = await readItems();
-
+        setIsLoading(!isLoading);
         setItems(settlingLisMapThrough);
       } catch (err) {
         console.log('Error message:', err);
-        console.log('Cannot get:', setIsLoading(!isLoading));
+        // Calling the setError message
+        setError(error);
+        // Calling the isLoading/setting to false
+        setIsLoading(!isLoading);
       }
     }
 
     effecting();
-  }, [items]);
+  }, []);
 
   if (isLoading) {
     return <div>Loading...</div>;
