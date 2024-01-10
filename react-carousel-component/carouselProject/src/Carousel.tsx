@@ -1,6 +1,6 @@
 // FILE IMPORT'S
-import { useState } from 'react';
-import { FaChevronRight, FaChevronLeft } from 'react-icons/fa';
+import { useEffect, useState, useCallback } from 'react';
+import { FaChevronRight, FaChevronLeft, FaCircle } from 'react-icons/fa';
 import './banners.css';
 import { images } from './App';
 
@@ -17,17 +17,39 @@ type Props = {
 
 
 type PosterProps = {
-  items: Props[];
+  items: ObjProps[];
   currNumberPr: number;
 }
 
 
-export function RotatingBanner({ items }: Props) {
+export function Carousel({ items }: Props) {
   // state for the number's
   const [currNumber, setCurrNumber] = useState(0);
 
 
+
+
   // useEffect for the carousel's interval using setInterval
+
+  // const handleNextFunc = useCallback(() => {
+  //   setCurrNumber((prevIndex) => (prevIndex - 1 + items.length) % items.length);
+  // }, []);
+
+  const handleNextFunc = useCallback(() => {
+    setCurrNumber((prevIndex) => (prevIndex + 1 + items.length) % items.length);
+  }, []);
+
+
+
+
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      console.log('UseEffect is Called!!/Fired!!')
+      handleNextFunc()
+    }, 2000);
+    return () => clearTimeout(intervalId);
+  }, [handleNextFunc]);
 
   function handlerPrevFunc(): void {
     // 3 - 1 + items.lenegth(6) % 6 = 2
@@ -35,11 +57,11 @@ export function RotatingBanner({ items }: Props) {
     setCurrNumber(prevIndex);
   }
 
-  function handlerNextFunc(): void {
-    // 3 - 1 + items.lenegth(6) % 6 = 2
-    const nextIndex = (currNumber + 1) % items.length;
-    setCurrNumber(nextIndex);
-  }
+  // function handlerNextFunc(): void {
+  //   // 3 - 1 + items.lenegth(6) % 6 = 2
+  //   const nextIndex = (currNumber + 1) % items.length;
+  //   setCurrNumber(nextIndex);
+  // }
 
   function handleBtn(index: number): void {
     // 2 things figure out what index we r clicking on
@@ -53,7 +75,7 @@ export function RotatingBanner({ items }: Props) {
 
       <div className="flex justify-between">
         <BannerPrevBtn click={handlerPrevFunc} />
-        <NextBtn click={handlerNextFunc} />
+        <NextBtn click={handleNextFunc} />
       </div>
 
       <BannerNumsFlexerItems click={handleBtn} currNumber={currNumber} />
@@ -65,7 +87,7 @@ export function RotatingBanner({ items }: Props) {
 
 
 export function Banner({ items, currNumberPr }: PosterProps) {
-  const firstItem = items[0];
+  const firstItem = items[currNumberPr];
 
   return (
     <div className='flex justify-center m-auto flex-col'>
@@ -99,25 +121,38 @@ type PropNumber = {
 };
 export function BannerNumsFlexerItems({ currNumber, click }: PropNumber) {
   const btns = [];
-  for (let i = 0; i < 6; i += 1) {
+  for (let i = 0; i < 5; i += 1) {
     if (currNumber === i) {
       btns.push(
         // <button onClick={() => click(currNumber)} key={i} className="m-10 bg-gray-300 text-black p-8 cursor-pointer hover: hover:0 transition duration-300 rounded-md shadow-yellow">{i}</button>
-        <button
-          onClick={() => click(Number(i))}
-          key={i}
-          className="m-10 bg-gray-300 text-black p-8 cursor-pointer hover: hover:0 transition duration-300 rounded-md shadow-yellow">
-          {i}
-        </button>
+        // <button
+        //   onClick={() => click(Number(i))}
+        //   key={i}
+        //   className="m-14 bg-gray-300 text-black p-8 cursor-pointer hover: hover:0 transition duration-300 rounded-md shadow-yellow">
+        //   {i}
+        // </button>
+
+        <div
+          onClick={() => click(currNumber)} key={i}
+          className="circs m-10 bg-gray-300 text-black p-8 cursor-pointer hover: hover:0 transition duration-300 shadow-yellow"
+        ></div>
+
+
+
       );
     } else {
       btns.push(
-        <button
-          onClick={() => click(Number(i))}
-          key={i}
-          className="m-10 bg-gray-950 text-white p-8 cursor-pointer hover: hover:bg-gray-300 transition duration-300 text-black hover:text-black rounded-md">
-          {i}
-        </button>
+        // <button
+        //   onClick={() => click(Number(i))}
+        //   key={i}
+        //   className="m-10 bg-gray-950 text-white p-8 cursor-pointer hover: hover:bg-gray-300 transition duration-300 text-black hover:text-black rounded-md">
+        //   {i}
+        // </button>
+        <div
+          onClick={() => click(currNumber)} key={i}
+          className="circs m-10 bg-gray-950 text-white p-8 cursor-pointer hover: hover:bg-gray-300 transition duration-300 text-black hover:text-black"
+        ></div>
+
       );
     }
   }
@@ -132,7 +167,7 @@ type Nextbutton = {
 
 export function NextBtn({ click }: Nextbutton) {
   return (
-    <span onClick={click} className=''>
+    <span onClick={click} className='cursor-pointer'>
       <FaChevronRight />
     </span>
   );

@@ -1,5 +1,5 @@
 import './App.css'
-import { RotatingBanner, type ObjProps } from './Carousel';
+import { Carousel, type ObjProps } from './Carousel';
 
 // CAROUSEL PROPERTIE'S
 export const images: ObjProps[] = [
@@ -29,7 +29,7 @@ function App() {
 
   return (
     <>
-      <RotatingBanner items={images} />
+      <Carousel items={images} />
     </>
   )
 }

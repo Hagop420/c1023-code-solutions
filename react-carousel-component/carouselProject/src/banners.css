@@ -12,3 +12,9 @@ span {
   flex-direction: column;
   justify-content: space-around;
 }
+
+.circs {
+  border-radius: 50%;
+  height: 1rem;
+  font-size: 10px !important
+}
