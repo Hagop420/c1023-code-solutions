@@ -5,7 +5,7 @@ export function Counter() {
   useEffect(() => {
     getData();
     setCounter((prev) => prev + 1);
-  }, [getData, setCounter]);
+  }, [setCounter]);
 
   function getData() {
     // fetch data

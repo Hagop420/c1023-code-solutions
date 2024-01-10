@@ -2,14 +2,14 @@
 import { useEffect, useState } from 'react';
 
 export function Timer() {
-  let [time, setTime] = useState(0);
+  const [time, setTime] = useState(0);
   useEffect(() => {
     const timerId = setTimeout(() => {
-      setTime(time += 1);
+      setTime((time += 1));
       console.log(`Time is: ${time}`);
     }, 1000);
     return () => clearTimeout(timerId);
-  }, [setTime, time]);
+  }, [time]);
 
   return (
     <div>
