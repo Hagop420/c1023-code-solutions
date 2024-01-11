@@ -1,3 +1,4 @@
+// password verification
 import argon2 from 'argon2';
 
 const providedPassword = process.argv[2];
