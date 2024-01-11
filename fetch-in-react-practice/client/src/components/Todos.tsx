@@ -85,8 +85,17 @@ export function Todos() {
         return todoNew
       }
     })
+
+    // const newMap: any = [
+
+    // ]
+    // todos.forEach(shrooms => {
+    //   todo.todoId ? newMap.push(jsonCONV) : newMap.push(shrooms)
+    // })
+
+    // setTodos(newMap)
     setTodos(newMap)
-    console.log(jsonCONV)
+    // console.log(jsonCONV)
   }
 
   if (isLoading) {
@@ -100,16 +109,17 @@ export function Todos() {
       </div>
     );
   }
+
+
   return (
-    <div className="container">
-      <div className="row">
-        <div className="col pt-5">
-          <PageTitle text="Todo App" />
-          <TodoForm onSubmit={addTodo} />
-          <TodoList todos={todos} toggleCompleted={toggleCompleted} />
-        </div>
+    <div className="row d-flex m-auto justify-content-center align-items-center">
+      <div className="col pt-5">
+        <PageTitle text="Todo App" />
+        <TodoForm onSubmit={addTodo} />
+        <TodoList todos={todos} toggleCompleted={toggleCompleted} />
       </div>
     </div>
+
   );
 }
 
