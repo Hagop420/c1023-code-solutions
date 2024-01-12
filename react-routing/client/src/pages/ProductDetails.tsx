@@ -39,7 +39,7 @@ export function ProductDetails() {
       </div>
     );
   function handleClick() {
-    alert(`Thanks for buying ${product.name} `);
+    alert(`Thanks for buying ${product?.name} `);
     navigate('/');
   }
   if (!product) return null;
