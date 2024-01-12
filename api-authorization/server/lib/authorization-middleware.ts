@@ -8,13 +8,14 @@ export function authMiddleware(
   res: Response,
   next: NextFunction
 ) {
-  /* your code here */
-  const token = req.get('authorization')?.split('Bearer')[1]
+  /* AUTHORIZATION MIDDLEWARE */
+  const token = req.get('authorization')?.split('Bearer ')[1]
   if (!token) {
     throw new ClientError(401, 'invalid token')
   }
   req.user = jwt.verify(token, secret) as Request['user']
   next()
+  // AUTHORIZATION MIDDEWARE END
 }
 
 /*
