@@ -104,10 +104,16 @@ app.post('/api/grades', async (req, res, next) => {
       throw new ClientError(400, 'no score');
     }
 
+    // const sql = `
+    // INSERT INTO "grades" ("name" , "course" , "score" )
+    //   VALUES ($1 ,$2 ,$3)
+    //     RETURNING *
+    //   `;
     const sql = `
     INSERT INTO "grades" ("name" , "course" , "score" )
-      VALUES ($1 ,$2 ,$3)`;
-
+      VALUES ("Hi" , "JS" , "120")
+        RETURNING *
+      `;
     // const gradesInfo = sql
 
     // query by using the pool clause
