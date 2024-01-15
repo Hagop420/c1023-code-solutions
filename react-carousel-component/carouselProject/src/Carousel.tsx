@@ -18,8 +18,6 @@ type PosterProps = {
   currNumberPr: number;
 };
 
-//  for git purpose's
-const [currNumber, setCurrNumber] = useState(0);
 
 
 export function Carousel({ items }: Props) {
