@@ -104,21 +104,17 @@ app.post('/api/grades', async (req, res, next) => {
       throw new ClientError(400, 'no score');
     }
 
-    // const sql = `
-    // INSERT INTO "grades" ("name" , "course" , "score" )
-    //   VALUES ($1 ,$2 ,$3)
-    //     RETURNING *
-    //   `;
     const sql = `
     INSERT INTO "grades" ("name" , "course" , "score" )
-      VALUES ("Hi" , "JS" , "120")
-        RETURNING *
+      VALUES ($1 ,$2 ,$3)
+        RETURNING $1 , $2 , $3
       `;
     // const gradesInfo = sql
+    const params = [name, course, score];
 
     // query by using the pool clause
 
-    const queryState = await db.query(sql);
+    const queryState = await db.query(sql, params);
 
     const queryResult = queryState.rows[0];
 
