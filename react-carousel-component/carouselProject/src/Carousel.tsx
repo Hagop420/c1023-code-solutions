@@ -1,8 +1,7 @@
 // FILE IMPORT'S
 import { useEffect, useState, useCallback } from 'react';
-import { FaChevronRight, FaChevronLeft, FaCircle } from 'react-icons/fa';
+import { FaChevronRight, FaChevronLeft } from 'react-icons/fa';
 import './banners.css';
-import { images } from './App';
 
 // prop for RoatingBanner
 export type ObjProps = {
@@ -10,24 +9,22 @@ export type ObjProps = {
   alt: string;
 };
 
-
 type Props = {
-  items: ObjProps[]
-}
-
+  items: ObjProps[];
+};
 
 type PosterProps = {
   items: ObjProps[];
   currNumberPr: number;
-}
+};
+
+//  for git purpose's
+const [currNumber, setCurrNumber] = useState(0);
 
 
 export function Carousel({ items }: Props) {
   // state for the number's
   const [currNumber, setCurrNumber] = useState(0);
-
-
-
 
   // useEffect for the carousel's interval using setInterval
 
@@ -37,16 +34,11 @@ export function Carousel({ items }: Props) {
 
   const handleNextFunc = useCallback(() => {
     setCurrNumber((prevIndex) => (prevIndex + 1 + items.length) % items.length);
-  }, []);
-
-
-
-
+  }, [items.length]);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      console.log('UseEffect is Called!!/Fired!!')
-      handleNextFunc()
+      handleNextFunc();
     }, 2000);
     return () => clearTimeout(intervalId);
   }, [handleNextFunc]);
@@ -78,26 +70,25 @@ export function Carousel({ items }: Props) {
         <NextBtn click={handleNextFunc} />
       </div>
 
-      <BannerNumsFlexerItems click={handleBtn} currNumber={currNumber} />
-
+      <div className="text-lg	">
+        <BannerNumsFlexerItems click={handleBtn} currNumber={currNumber} />
+      </div>
     </>
   );
 }
-
-
 
 export function Banner({ items, currNumberPr }: PosterProps) {
   const firstItem = items[currNumberPr];
 
   return (
-    <div className='flex justify-center m-auto flex-col'>
-      {/* {items.map((mappingInd, index) => (
-        <img className='img_controls cursor-pointer m-10' key={index} src={mappingInd.src} alt={mappingInd.alt} />
-      ))} */}
-      <img className='img_controls cursor-pointer m-10' src={firstItem.src} alt={firstItem?.alt} />
-
+    <div className="flex items-center justcify-center m-auto flex-col">
+      <img
+        className="img_controls cursor-pointer m-10"
+        src={firstItem.src}
+        alt={firstItem?.alt}
+      />
     </div>
-  )
+  );
 }
 
 // COMPONENT 2
@@ -107,7 +98,9 @@ type PropsNumberHere = {
 
 export function BannerPrevBtn({ click }: PropsNumberHere) {
   return (
-    <span onClick={click} className='cursor-pointer'>
+    <span
+      onClick={click}
+      className="cursor-pointer text-3xl relative bottom-[280px] right-[20px]">
       <FaChevronLeft />
     </span>
   );
@@ -133,12 +126,9 @@ export function BannerNumsFlexerItems({ currNumber, click }: PropNumber) {
         // </button>
 
         <div
-          onClick={() => click(currNumber)} key={i}
-          className="circs m-10 bg-gray-300 text-black p-8 cursor-pointer hover: hover:0 transition duration-300 shadow-yellow"
-        ></div>
-
-
-
+          onClick={() => click(Number(i))}
+          key={i}
+          className="circs m-7 mx-auto bg-gray-300 text-black p-2 cursor-pointer hover: hover:0 transition duration-300 shadow-yellow"></div>
       );
     } else {
       btns.push(
@@ -149,10 +139,9 @@ export function BannerNumsFlexerItems({ currNumber, click }: PropNumber) {
         //   {i}
         // </button>
         <div
-          onClick={() => click(currNumber)} key={i}
-          className="circs m-10 bg-gray-950 text-white p-8 cursor-pointer hover: hover:bg-gray-300 transition duration-300 text-black hover:text-black"
-        ></div>
-
+          onClick={() => click(Number(i))}
+          key={i}
+          className="circs m-7 mx-auto bg-gray-950 text-white p-2 cursor-pointer hover: hover:bg-gray-300 transition duration-300 text-black hover:text-black"></div>
       );
     }
   }
@@ -167,7 +156,9 @@ type Nextbutton = {
 
 export function NextBtn({ click }: Nextbutton) {
   return (
-    <span onClick={click} className='cursor-pointer'>
+    <span
+      onClick={click}
+      className="cursor-pointer text-3xl relative bottom-[280px] left-[20px]">
       <FaChevronRight />
     </span>
   );

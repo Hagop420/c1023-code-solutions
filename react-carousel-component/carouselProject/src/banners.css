@@ -4,7 +4,7 @@
 
 .img_controls {
   height: 55vh;
-  border-radius: .2rem
+  border-radius: 0.2rem;
 }
 
 span {
@@ -15,6 +15,4 @@ span {
 
 .circs {
   border-radius: 50%;
-  height: 1rem;
-  font-size: 10px !important
 }
