@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars -- Remove me */
 import { type FormEvent, useState } from 'react';
+import { scryRenderedComponentsWithType } from 'react-dom/test-utils';
 
 type Image = {
   imageId: number;
@@ -8,9 +9,12 @@ type Image = {
 };
 
 export function UploadForm() {
+  const [imgFile, setImgFile] = useState<Image>();
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
     /* Prevent the browser's default behavior for form submissions.
      * Create a `new` FormData object from the `event`.
+
      *
      * Use fetch() to send a POST request to /api/uploads.
      * The body should be the form data object you created (not a JSON string).
@@ -25,6 +29,18 @@ export function UploadForm() {
      * https://developer.mozilla.org/en-US/docs/Web/API/FormData/FormData
      * https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#uploading_a_file
      */
+    try {
+      const formCreationUsingFormData = new FormData(event.currentTarget);
+      const sendingFetchCallToMulterFileUpload = await fetch('/api/uploads', {
+        method: 'POST',
+        body: formCreationUsingFormData,
+      });
+      const awitingDta = await sendingFetchCallToMulterFileUpload.json();
+      setImgFile(awitingDta);
+      console.log('Successful data pull', awitingDta);
+    } catch (err) {
+      console.error(`Error: ${err}`);
+    }
   }
 
   return (
