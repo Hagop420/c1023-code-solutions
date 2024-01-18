@@ -1,0 +1,2 @@
+-- SELECTING clause
+SELECT ""
