@@ -107,7 +107,7 @@ app.post('/api/grades', async (req, res, next) => {
     const sql = `
     INSERT INTO "grades" ("name" , "course" , "score" )
       VALUES ($1 ,$2 ,$3)
-        RETURNING $1 , $2 , $3
+        RETURNING *
       `;
     // const gradesInfo = sql
     const params = [name, course, score];
